@@ -11,15 +11,15 @@
 @implementation EXRunner
 
 -(void)startRun{
+    NSLog(@"People runner start running");
     
 }
 -(BOOL)stopRun{
-    return 0;
+    return arc4random()%2;
 }
 
--(void)moved
-{
-    NSLog(@"person run");
+-(void)howYouRun{
+    NSLog(@"I run very fast!");
 }
 
 @end

@@ -13,14 +13,12 @@
 		774F51CB1CBFBEBE00CC1D5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 774F51C91CBFBEBE00CC1D5A /* Main.storyboard */; };
 		774F51CD1CBFBEBE00CC1D5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 774F51CC1CBFBEBE00CC1D5A /* Assets.xcassets */; };
 		774F51D01CBFBEBE00CC1D5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 774F51CE1CBFBEBE00CC1D5A /* LaunchScreen.storyboard */; };
-		7787F16E1CC1779700DAE9FA /* EXDriver.m in Sources */ = {isa = PBXBuildFile; fileRef = 7787F1671CC1779700DAE9FA /* EXDriver.m */; };
-		7787F16F1CC1779700DAE9FA /* EXJumper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7787F1691CC1779700DAE9FA /* EXJumper.m */; };
-		7787F1701CC1779700DAE9FA /* EXRunner.m in Sources */ = {isa = PBXBuildFile; fileRef = 7787F16B1CC1779700DAE9FA /* EXRunner.m */; };
-		7787F1711CC1779700DAE9FA /* EXSwim.m in Sources */ = {isa = PBXBuildFile; fileRef = 7787F16D1CC1779700DAE9FA /* EXSwim.m */; };
-		7787F17A1CC177F900DAE9FA /* EXCat.m in Sources */ = {isa = PBXBuildFile; fileRef = 7787F1731CC177F900DAE9FA /* EXCat.m */; };
-		7787F17B1CC177F900DAE9FA /* EXFrog.m in Sources */ = {isa = PBXBuildFile; fileRef = 7787F1751CC177F900DAE9FA /* EXFrog.m */; };
-		7787F17C1CC177F900DAE9FA /* EXAnimal.m in Sources */ = {isa = PBXBuildFile; fileRef = 7787F1761CC177F900DAE9FA /* EXAnimal.m */; };
-		7787F17D1CC177F900DAE9FA /* EXPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 7787F1791CC177F900DAE9FA /* EXPerson.m */; };
+		775AFF021CC1896800415FDE /* EXDriver.m in Sources */ = {isa = PBXBuildFile; fileRef = 775AFEFB1CC1896800415FDE /* EXDriver.m */; };
+		775AFF031CC1896800415FDE /* EXJumper.m in Sources */ = {isa = PBXBuildFile; fileRef = 775AFEFD1CC1896800415FDE /* EXJumper.m */; };
+		775AFF041CC1896800415FDE /* EXRunner.m in Sources */ = {isa = PBXBuildFile; fileRef = 775AFEFF1CC1896800415FDE /* EXRunner.m */; };
+		775AFF051CC1896800415FDE /* EXSwim.m in Sources */ = {isa = PBXBuildFile; fileRef = 775AFF011CC1896800415FDE /* EXSwim.m */; };
+		775AFF081CC193A300415FDE /* Frog.m in Sources */ = {isa = PBXBuildFile; fileRef = 775AFF071CC193A300415FDE /* Frog.m */; };
+		775AFF0C1CC5030600415FDE /* EXLazyPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 775AFF0B1CC5030600415FDE /* EXLazyPerson.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,22 +35,18 @@
 		774F51D81CBFBF9000CC1D5A /* JumperProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JumperProtocol.h; sourceTree = "<group>"; };
 		774F51D91CBFC1A100CC1D5A /* RunnerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunnerProtocol.h; sourceTree = "<group>"; };
 		774F51DA1CBFC2CA00CC1D5A /* SwimmerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwimmerProtocol.h; sourceTree = "<group>"; };
-		7787F1661CC1779700DAE9FA /* EXDriver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXDriver.h; path = ../People/EXDriver.h; sourceTree = "<group>"; };
-		7787F1671CC1779700DAE9FA /* EXDriver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EXDriver.m; path = ../People/EXDriver.m; sourceTree = "<group>"; };
-		7787F1681CC1779700DAE9FA /* EXJumper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXJumper.h; path = ../People/EXJumper.h; sourceTree = "<group>"; };
-		7787F1691CC1779700DAE9FA /* EXJumper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EXJumper.m; path = ../People/EXJumper.m; sourceTree = "<group>"; };
-		7787F16A1CC1779700DAE9FA /* EXRunner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXRunner.h; path = ../People/EXRunner.h; sourceTree = "<group>"; };
-		7787F16B1CC1779700DAE9FA /* EXRunner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EXRunner.m; path = ../People/EXRunner.m; sourceTree = "<group>"; };
-		7787F16C1CC1779700DAE9FA /* EXSwim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXSwim.h; path = ../People/EXSwim.h; sourceTree = "<group>"; };
-		7787F16D1CC1779700DAE9FA /* EXSwim.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EXSwim.m; path = ../People/EXSwim.m; sourceTree = "<group>"; };
-		7787F1721CC177F900DAE9FA /* EXCat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXCat.h; sourceTree = "<group>"; };
-		7787F1731CC177F900DAE9FA /* EXCat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXCat.m; sourceTree = "<group>"; };
-		7787F1741CC177F900DAE9FA /* EXFrog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXFrog.h; sourceTree = "<group>"; };
-		7787F1751CC177F900DAE9FA /* EXFrog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXFrog.m; sourceTree = "<group>"; };
-		7787F1761CC177F900DAE9FA /* EXAnimal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXAnimal.m; sourceTree = "<group>"; };
-		7787F1771CC177F900DAE9FA /* EXAnimal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXAnimal.h; sourceTree = "<group>"; };
-		7787F1781CC177F900DAE9FA /* EXPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXPerson.h; path = ../People/EXPerson.h; sourceTree = "<group>"; };
-		7787F1791CC177F900DAE9FA /* EXPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EXPerson.m; path = ../People/EXPerson.m; sourceTree = "<group>"; };
+		775AFEFA1CC1896800415FDE /* EXDriver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXDriver.h; sourceTree = "<group>"; };
+		775AFEFB1CC1896800415FDE /* EXDriver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXDriver.m; sourceTree = "<group>"; };
+		775AFEFC1CC1896800415FDE /* EXJumper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXJumper.h; sourceTree = "<group>"; };
+		775AFEFD1CC1896800415FDE /* EXJumper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXJumper.m; sourceTree = "<group>"; };
+		775AFEFE1CC1896800415FDE /* EXRunner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXRunner.h; sourceTree = "<group>"; };
+		775AFEFF1CC1896800415FDE /* EXRunner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXRunner.m; sourceTree = "<group>"; };
+		775AFF001CC1896800415FDE /* EXSwim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXSwim.h; sourceTree = "<group>"; };
+		775AFF011CC1896800415FDE /* EXSwim.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXSwim.m; sourceTree = "<group>"; };
+		775AFF061CC193A300415FDE /* Frog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Frog.h; path = Animal/Frog.h; sourceTree = "<group>"; };
+		775AFF071CC193A300415FDE /* Frog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Frog.m; path = Animal/Frog.m; sourceTree = "<group>"; };
+		775AFF0A1CC5030600415FDE /* EXLazyPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXLazyPerson.h; sourceTree = "<group>"; };
+		775AFF0B1CC5030600415FDE /* EXLazyPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXLazyPerson.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,13 +79,15 @@
 		774F51BF1CBFBEBE00CC1D5A /* ExampleProtocol */ = {
 			isa = PBXGroup;
 			children = (
+				775AFF091CC193AD00415FDE /* Animal */,
+				775AFEF91CC1896800415FDE /* Sport */,
 				774F51D81CBFBF9000CC1D5A /* JumperProtocol.h */,
 				774F51D91CBFC1A100CC1D5A /* RunnerProtocol.h */,
 				774F51DA1CBFC2CA00CC1D5A /* SwimmerProtocol.h */,
-				7787F17E1CC1781300DAE9FA /* Animal */,
-				7787F1651CC1779700DAE9FA /* People */,
 				774F51C31CBFBEBE00CC1D5A /* AppDelegate.h */,
 				774F51C41CBFBEBE00CC1D5A /* AppDelegate.m */,
+				775AFF0A1CC5030600415FDE /* EXLazyPerson.h */,
+				775AFF0B1CC5030600415FDE /* EXLazyPerson.m */,
 				774F51C61CBFBEBE00CC1D5A /* ViewController.h */,
 				774F51C71CBFBEBE00CC1D5A /* ViewController.m */,
 				774F51C91CBFBEBE00CC1D5A /* Main.storyboard */,
@@ -111,35 +107,28 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		7787F1651CC1779700DAE9FA /* People */ = {
+		775AFEF91CC1896800415FDE /* Sport */ = {
 			isa = PBXGroup;
 			children = (
-				7787F1781CC177F900DAE9FA /* EXPerson.h */,
-				7787F1791CC177F900DAE9FA /* EXPerson.m */,
-				7787F1661CC1779700DAE9FA /* EXDriver.h */,
-				7787F1671CC1779700DAE9FA /* EXDriver.m */,
-				7787F1681CC1779700DAE9FA /* EXJumper.h */,
-				7787F1691CC1779700DAE9FA /* EXJumper.m */,
-				7787F16A1CC1779700DAE9FA /* EXRunner.h */,
-				7787F16B1CC1779700DAE9FA /* EXRunner.m */,
-				7787F16C1CC1779700DAE9FA /* EXSwim.h */,
-				7787F16D1CC1779700DAE9FA /* EXSwim.m */,
+				775AFEFA1CC1896800415FDE /* EXDriver.h */,
+				775AFEFB1CC1896800415FDE /* EXDriver.m */,
+				775AFEFC1CC1896800415FDE /* EXJumper.h */,
+				775AFEFD1CC1896800415FDE /* EXJumper.m */,
+				775AFEFE1CC1896800415FDE /* EXRunner.h */,
+				775AFEFF1CC1896800415FDE /* EXRunner.m */,
+				775AFF001CC1896800415FDE /* EXSwim.h */,
+				775AFF011CC1896800415FDE /* EXSwim.m */,
 			);
-			name = People;
 			path = Sport;
 			sourceTree = "<group>";
 		};
-		7787F17E1CC1781300DAE9FA /* Animal */ = {
+		775AFF091CC193AD00415FDE /* Animal */ = {
 			isa = PBXGroup;
 			children = (
-				7787F1721CC177F900DAE9FA /* EXCat.h */,
-				7787F1731CC177F900DAE9FA /* EXCat.m */,
-				7787F1741CC177F900DAE9FA /* EXFrog.h */,
-				7787F1751CC177F900DAE9FA /* EXFrog.m */,
-				7787F1761CC177F900DAE9FA /* EXAnimal.m */,
-				7787F1771CC177F900DAE9FA /* EXAnimal.h */,
+				775AFF061CC193A300415FDE /* Frog.h */,
+				775AFF071CC193A300415FDE /* Frog.m */,
 			);
-			path = Animal;
+			name = Animal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,17 +201,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7787F17D1CC177F900DAE9FA /* EXPerson.m in Sources */,
-				7787F1711CC1779700DAE9FA /* EXSwim.m in Sources */,
+				775AFF051CC1896800415FDE /* EXSwim.m in Sources */,
+				775AFF0C1CC5030600415FDE /* EXLazyPerson.m in Sources */,
 				774F51C81CBFBEBE00CC1D5A /* ViewController.m in Sources */,
-				7787F17C1CC177F900DAE9FA /* EXAnimal.m in Sources */,
-				7787F16F1CC1779700DAE9FA /* EXJumper.m in Sources */,
+				775AFF031CC1896800415FDE /* EXJumper.m in Sources */,
 				774F51C51CBFBEBE00CC1D5A /* AppDelegate.m in Sources */,
-				7787F17B1CC177F900DAE9FA /* EXFrog.m in Sources */,
-				7787F16E1CC1779700DAE9FA /* EXDriver.m in Sources */,
-				7787F1701CC1779700DAE9FA /* EXRunner.m in Sources */,
+				775AFF021CC1896800415FDE /* EXDriver.m in Sources */,
+				775AFF041CC1896800415FDE /* EXRunner.m in Sources */,
 				774F51C21CBFBEBE00CC1D5A /* main.m in Sources */,
-				7787F17A1CC177F900DAE9FA /* EXCat.m in Sources */,
+				775AFF081CC193A300415FDE /* Frog.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

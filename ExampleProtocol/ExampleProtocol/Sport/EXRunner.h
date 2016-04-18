@@ -1,23 +1,21 @@
 //
-//  RunnerProtocol.h
-//  ExampleProtocol
+//  EXRunner.h
+//  EXPeople
 //
-//  Created by Viktor Siedov on 14.04.16.
+//  Created by Viktor Siedov on 05.03.16.
 //  Copyright © 2016 Siedov Viktor. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreGraphics/CoreGraphics.h>
+#import "RunnerProtocol.h"
 
-@protocol RunnerProtocol <NSObject>
+@interface EXRunner : NSObject <RunnerProtocol>
 
-@required
 @property(assign, nonatomic)CGFloat distanceRun;
 @property(assign, nonatomic)NSInteger roundRun;
 -(void)startRun;
 -(BOOL)stopRun;
 
-@optional
 -(void)howYouRun;
 
 @end

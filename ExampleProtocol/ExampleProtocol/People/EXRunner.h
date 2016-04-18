@@ -10,6 +10,7 @@
 #import "RunnerProtocol.h"
 
 @interface EXRunner : EXPerson <RunnerProtocol>
+
 @property(assign, nonatomic)CGFloat distanceRun;
 @property(assign, nonatomic)NSInteger roundRun;
 -(void)startRun;

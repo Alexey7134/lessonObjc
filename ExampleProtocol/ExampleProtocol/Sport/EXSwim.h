@@ -1,22 +1,21 @@
 //
-//  SwimmerProtocol.h
-//  ExampleProtocol
+//  EXSwim.h
+//  EXPeople
 //
-//  Created by Viktor Siedov on 14.04.16.
+//  Created by Viktor Siedov on 05.03.16.
 //  Copyright © 2016 Siedov Viktor. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreGraphics/CoreGraphics.h>
+#import "SwimmerProtocol.h"
 
-@protocol SwimmerProtocol <NSObject>
+@interface EXSwim : NSObject<SwimmerProtocol>
 
-@required
 @property(assign, nonatomic)CGFloat distanceSwim;
 @property(assign, nonatomic)NSInteger poolLenght;
 -(void)startSwim;
 -(BOOL)stopSwim;
-@optional
+
 -(void)howYouswimming;
 
 @end
