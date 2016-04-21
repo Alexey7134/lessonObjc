@@ -15,6 +15,7 @@
 		775AFF571CC7FF2900415FDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 775AFF551CC7FF2900415FDE /* LaunchScreen.storyboard */; };
 		775AFF601CC7FF8D00415FDE /* SVPatient.m in Sources */ = {isa = PBXBuildFile; fileRef = 775AFF5F1CC7FF8D00415FDE /* SVPatient.m */; };
 		775AFF631CC7FFB300415FDE /* SVDoctor.m in Sources */ = {isa = PBXBuildFile; fileRef = 775AFF621CC7FFB300415FDE /* SVDoctor.m */; };
+		775AFF661CC8A99C00415FDE /* SVFriend.m in Sources */ = {isa = PBXBuildFile; fileRef = 775AFF651CC8A99C00415FDE /* SVFriend.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		775AFF5F1CC7FF8D00415FDE /* SVPatient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVPatient.m; sourceTree = "<group>"; };
 		775AFF611CC7FFB300415FDE /* SVDoctor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVDoctor.h; sourceTree = "<group>"; };
 		775AFF621CC7FFB300415FDE /* SVDoctor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVDoctor.m; sourceTree = "<group>"; };
+		775AFF641CC8A99C00415FDE /* SVFriend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVFriend.h; sourceTree = "<group>"; };
+		775AFF651CC8A99C00415FDE /* SVFriend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVFriend.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +69,8 @@
 			children = (
 				775AFF4A1CC7FF2900415FDE /* AppDelegate.h */,
 				775AFF4B1CC7FF2900415FDE /* AppDelegate.m */,
+				775AFF641CC8A99C00415FDE /* SVFriend.h */,
+				775AFF651CC8A99C00415FDE /* SVFriend.m */,
 				775AFF5E1CC7FF8D00415FDE /* SVPatient.h */,
 				775AFF5F1CC7FF8D00415FDE /* SVPatient.m */,
 				775AFF611CC7FFB300415FDE /* SVDoctor.h */,
@@ -161,6 +166,7 @@
 			files = (
 				775AFF631CC7FFB300415FDE /* SVDoctor.m in Sources */,
 				775AFF601CC7FF8D00415FDE /* SVPatient.m in Sources */,
+				775AFF661CC8A99C00415FDE /* SVFriend.m in Sources */,
 				775AFF4F1CC7FF2900415FDE /* ViewController.m in Sources */,
 				775AFF4C1CC7FF2900415FDE /* AppDelegate.m in Sources */,
 				775AFF491CC7FF2900415FDE /* main.m in Sources */,
