@@ -17,16 +17,28 @@ typedef NS_ENUM(NSInteger, IllnessType){
     IllnessTypeCardiovascular
 };
 
+typedef NS_ENUM(NSInteger, SVPartBody){
+    SVPartBodyHead,
+    SVPartBodyLeg,
+    SVPartBodyTrunk,
+    SVPartBodyHand
+};
+
 @interface SVPatient : NSObject
 
 @property(weak, nonatomic)id <SVPatientDelegate>delegate;
 @property(strong, nonatomic)NSString *name;
 @property(assign, nonatomic)CGFloat temperature;
 @property(assign, nonatomic)IllnessType illness;
+@property(assign, nonatomic)SVPartBody partBody;
+@property(assign, nonatomic)BOOL pill;
+@property(assign, nonatomic)BOOL shot;
+
 
 -(BOOL)howYouFeel;
 -(void)takePill;
 -(void)makeShot;
+-(void)myHurts;
 
 @end
 

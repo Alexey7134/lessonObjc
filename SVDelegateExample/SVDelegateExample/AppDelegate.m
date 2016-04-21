@@ -11,7 +11,7 @@
 #import "SVDoctor.h"
 #import "SVFriend.h"
 
-const NSInteger MAX_PATIENT = 5;
+const NSInteger MAX_PATIENT = 20;
 const CGFloat NORMAL_TEMPERATURE = 36.6;
 
 @interface AppDelegate ()
@@ -36,6 +36,7 @@ const CGFloat NORMAL_TEMPERATURE = 36.6;
         patient.name = [NSString stringWithFormat:@"Vova%d", i];
         patient.temperature = NORMAL_TEMPERATURE + arc4random()%4;
         patient.illness = arc4random()%4;
+        patient.partBody =  arc4random()%5;
         if (arc4random()%2) {
             patient.delegate = friend;
         }else{
@@ -48,6 +49,8 @@ const CGFloat NORMAL_TEMPERATURE = 36.6;
     for (SVPatient *patient in listPatients) {
         NSLog(@"how you feel %@? -  %@", patient.name, [patient howYouFeel] ? @"Good" : @"Bad");
     }
+    
+    [doctor reportList];
     
     return YES;
 }
