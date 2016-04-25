@@ -53,10 +53,16 @@
 -(void)takePill{
     NSLog(@"I take pill my name %@", self.name);
     self.pill = YES;
+    [self assessmenAfterTreatments];
 }
 -(void)makeShot{
     NSLog(@"I take shot my name %@", self.name);
     self.shot = YES;
+    [self assessmenAfterTreatments];
+}
+
+-(void)assessmenAfterTreatments{
+    self.assessmentDoctor = arc4random()%2;
 }
 
 @end

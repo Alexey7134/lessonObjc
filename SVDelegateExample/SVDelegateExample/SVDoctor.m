@@ -20,23 +20,7 @@
     
     [self treatPatientHurt:patient];
     
-    if (patient.temperature >37.f) {
-        
-        if (!self.patientsList) {
-            self.patientsList = [[NSArray alloc] init];
-        }
-        
-        NSDictionary *dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
-                                    patient.name,@"patient",
-                                    @(patient.temperature), @"temperature",
-                                    [self returnStringIllness:patient.illness], @"illness",
-                                    [self returnStringBodyPart:patient.partBody],@"partBody",
-                                    patient.pill ? @"YES" : @"NO",@"takePill",
-                                    patient.shot ? @"YES" : @"NO",@"makeShot",
-                                    nil];
-
-        self.patientsList = [self.patientsList arrayByAddingObject:dictionary];
-    }
+    [self addToPatientsList:patient];
     
     return feelPreson;
 }
@@ -90,7 +74,7 @@
     }else if(patient.temperature > 38.f){
         [patient makeShot];
     }else{
-        NSLog(@"I'm feeling good - %@ - My temperature %f", patient.name, patient.temperature);
+        NSLog(@"I am okay %@. My temperature %f. I can go at home. ", patient.name, patient.temperature);
     }
     return YES;
 }
@@ -100,19 +84,52 @@
     NSLog(@"treat %@", partBodyString);
 }
 
--(void)reportList{
-    if (self.patientsList) {
-        NSLog(@"array patient %@", self.patientsList);
-        self.patientsList = [self sortPatientsList:self.patientsList];
-        NSLog(@"array patient %@", self.patientsList);
-    }else{
-        NSLog(@"All patients is healthy");
+-(void)addToPatientsList:(SVPatient *)patient{
+    if (patient.temperature >37.f) {
+        
+        if (!self.patientsList) {
+            self.patientsList = [[NSArray alloc] init];
+        }
+        
+        NSDictionary *dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                                    patient.name,@"name",
+                                    @(patient.temperature), @"temperature",
+                                    [self returnStringIllness:patient.illness], @"illness",
+                                    [self returnStringBodyPart:patient.partBody],@"partBody",
+                                    patient.pill ? @"YES" : @"NO",@"takePill",
+                                    patient.shot ? @"YES" : @"NO",@"makeShot",
+                                    patient.assessmentDoctor ? @"YES" : @"NO",@"assessmentDoctor",
+                                    patient,@"patient",
+                                    nil];
+        
+        self.patientsList = [self.patientsList arrayByAddingObject:dictionary];
     }
 }
+
+-(void)reportList{
+    if (self.patientsList) {
+        NSLog(@"array patients before sorted %@", self.patientsList);
+        self.patientsList = [self sortPatientsList:self.patientsList];
+        NSLog(@"array patients after sorted %@", self.patientsList);
+    }else{
+        NSLog(@"All patients is healthy :)");
+    }
+}
+
 -(NSArray *)sortPatientsList:(NSArray *)array{
     NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"partBody" ascending:YES];
     array = [array sortedArrayUsingDescriptors:[NSArray arrayWithObjects:descriptor, nil]];
     return array;
 }
 
+-(NSArray*)returnArrayDissatisfied:(NSArray*)array{
+    NSArray *arrayPatient = @[];
+    for (NSDictionary *dictionaryPatient in array) {
+        NSString *suggestion = [dictionaryPatient valueForKey:@"assessmentDoctor"];
+        if ([suggestion isEqualToString:@"YES"]) {
+            arrayPatient = [arrayPatient arrayByAddingObject:dictionaryPatient];
+        }
+    }
+    return arrayPatient;
+}
 @end

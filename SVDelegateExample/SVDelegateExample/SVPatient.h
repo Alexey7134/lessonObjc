@@ -33,6 +33,7 @@ typedef NS_ENUM(NSInteger, SVPartBody){
 @property(assign, nonatomic)SVPartBody partBody;
 @property(assign, nonatomic)BOOL pill;
 @property(assign, nonatomic)BOOL shot;
+@property(assign, nonatomic)BOOL assessmentDoctor;
 
 
 -(BOOL)howYouFeel;

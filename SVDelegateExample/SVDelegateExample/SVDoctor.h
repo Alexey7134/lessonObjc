@@ -11,9 +11,10 @@
 
 @interface SVDoctor : NSObject <SVPatientDelegate>
 
+@property(strong, nonatomic)NSString *name;
 @property(strong, nonatomic)NSArray *patientsList;
 
 -(BOOL)patientBadFeel:(SVPatient *)patient;
 -(void)reportList;
-
+-(NSArray*)returnArrayDissatisfied:(NSArray*)array;
 @end

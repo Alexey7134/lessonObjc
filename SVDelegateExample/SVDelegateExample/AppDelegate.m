@@ -13,6 +13,7 @@
 
 const NSInteger MAX_PATIENT = 20;
 const CGFloat NORMAL_TEMPERATURE = 36.6;
+const NSInteger MAX_DISSATISFIED_PATIENTS = 5;
 
 @interface AppDelegate ()
 
@@ -26,6 +27,8 @@ const CGFloat NORMAL_TEMPERATURE = 36.6;
     NSArray *listPatients = [[NSArray alloc] init];
     
     SVDoctor *doctor = [[SVDoctor alloc] init];
+    doctor.name = @"Vasiliy";
+    
     
     SVFriend *friend = [[SVFriend alloc] init];
     
@@ -33,7 +36,7 @@ const CGFloat NORMAL_TEMPERATURE = 36.6;
     //create patients list
     for (NSInteger i = 0; i < MAX_PATIENT; i++) {
         SVPatient *patient = [[SVPatient alloc] init];
-        patient.name = [NSString stringWithFormat:@"Vova%d", i];
+        patient.name = [NSString stringWithFormat:@"Andrey%d", i];
         patient.temperature = NORMAL_TEMPERATURE + arc4random()%4;
         patient.illness = arc4random()%4;
         patient.partBody =  arc4random()%5;
@@ -51,6 +54,23 @@ const CGFloat NORMAL_TEMPERATURE = 36.6;
     }
     
     [doctor reportList];
+    
+    
+    //doctor 2
+    NSLog(@">>>>doctor2<<<<");
+    NSArray *arrayDissatisfiedPatients = @[];
+    arrayDissatisfiedPatients = [doctor returnArrayDissatisfied:doctor.patientsList];
+    SVDoctor *doctor2 = [[SVDoctor alloc] init];
+    doctor2.name = @"Ivan";
+    if([arrayDissatisfiedPatients count] > MAX_DISSATISFIED_PATIENTS){
+        for (NSDictionary *dictionaryPatient in arrayDissatisfiedPatients) {
+            SVPatient *patient = [dictionaryPatient valueForKey:@"patient"];
+            patient.delegate = doctor2;
+        }
+    }
+    
+    NSLog(@"change delegate to doctor 2 %@", arrayDissatisfiedPatients);
+    
     
     return YES;
 }
