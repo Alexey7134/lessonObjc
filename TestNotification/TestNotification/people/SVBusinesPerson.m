@@ -8,6 +8,7 @@
 
 #import "SVBusinesPerson.h"
 #import "SVGovernment.h"
+@import UIKit;
 
 @implementation SVBusinesPerson
 
@@ -22,6 +23,10 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(taxNotification:) name:SVGovernmentTaxNotification object:nil];
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(priceNotification:) name:SVGovernmentPriceNotification object:nil];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidEnterBackground:) name:UIApplicationDidEnterBackgroundNotification object:nil];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillEnterForeground:) name:UIApplicationWillEnterForegroundNotification object:nil];
     }
     return self;
 }
@@ -40,6 +45,14 @@
     CGFloat price = number.floatValue;
     _price = price;
     [self calcStandartOfLiving:_price outcome:_tax];
+}
+
+-(void)applicationDidEnterBackground:(NSNotification *)notification{
+    NSLog(@"Business man go to sleep");
+}
+
+-(void)applicationWillEnterForeground:(NSNotification *)notification{
+    NSLog(@"Business man go to work");
 }
 
 #pragma mark - calculate function

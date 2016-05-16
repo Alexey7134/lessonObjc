@@ -24,7 +24,9 @@
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(priceNotification:) name:SVGovernmentPriceNotification object:nil];
         
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidEnterBackground:) name:UIApplicationWillTerminateNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidEnterBackground:) name:UIApplicationDidEnterBackgroundNotification object:nil];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillEnterForeground:) name:UIApplicationWillEnterForegroundNotification object:nil];
     }
     return self;
 }
@@ -50,6 +52,11 @@
 -(void)applicationDidEnterBackground:(NSNotification *)notification{
     NSLog(@"Pension go to sleep");
 }
+
+-(void)applicationWillEnterForeground:(NSNotification *)notification{
+    NSLog(@"Pension get up");
+}
+
 
 #pragma mark - calculate function
 

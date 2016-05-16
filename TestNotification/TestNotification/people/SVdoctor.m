@@ -8,6 +8,7 @@
 
 #import "SVdoctor.h"
 #import "SVGovernment.h"
+@import UIKit;
 
 @implementation SVdoctor
 
@@ -28,6 +29,8 @@
     
     [nc addObserver:self selector:@selector(salaryNotification:) name:SVGovernmentSalaryNotification object:nil];
     [nc addObserver:self selector:@selector(priceNotification:) name:SVGovernmentPriceNotification object:nil];
+    [nc addObserver:self selector:@selector(applicationDidEnterBackground:) name:UIApplicationDidEnterBackgroundNotification object:nil];
+    [nc addObserver:self selector:@selector(applicationWillEnterForeground:) name:UIApplicationWillEnterForegroundNotification object:nil];
 }
 
 #pragma mark - Notification
@@ -51,8 +54,17 @@
     
     [self calcStandartOfLiving:_salary outcome:_price];
 }
+     
+-(void)applicationDidEnterBackground:(NSNotification *)notification{
+         NSLog(@"Doctor go to sleep");
+}
+     
+-(void)applicationWillEnterForeground:(NSNotification *)notification{
+        NSLog(@"Doctor go to work");
+}
 
 #pragma mark - calculate function
+
 -(CGFloat)calcInfluentionStartPrice:(CGFloat)startPrice nextPrice:(CGFloat)nextPrice{
     if (startPrice == 0 ||
         nextPrice == 0) {
