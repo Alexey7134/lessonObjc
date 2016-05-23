@@ -13,6 +13,7 @@
 		77481B521CF321F8003B1ABB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77481B501CF321F8003B1ABB /* Main.storyboard */; };
 		77481B541CF321F8003B1ABB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77481B531CF321F8003B1ABB /* Assets.xcassets */; };
 		77481B571CF321F8003B1ABB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77481B551CF321F8003B1ABB /* LaunchScreen.storyboard */; };
+		77481B601CF32A85003B1ABB /* SVStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 77481B5F1CF32A85003B1ABB /* SVStudent.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		77481B531CF321F8003B1ABB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		77481B561CF321F8003B1ABB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		77481B581CF321F8003B1ABB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77481B5E1CF32A85003B1ABB /* SVStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVStudent.h; sourceTree = "<group>"; };
+		77481B5F1CF32A85003B1ABB /* SVStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVStudent.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +63,8 @@
 			children = (
 				77481B4A1CF321F8003B1ABB /* AppDelegate.h */,
 				77481B4B1CF321F8003B1ABB /* AppDelegate.m */,
+				77481B5E1CF32A85003B1ABB /* SVStudent.h */,
+				77481B5F1CF32A85003B1ABB /* SVStudent.m */,
 				77481B4D1CF321F8003B1ABB /* ViewController.h */,
 				77481B4E1CF321F8003B1ABB /* ViewController.m */,
 				77481B501CF321F8003B1ABB /* Main.storyboard */,
@@ -151,6 +156,7 @@
 			files = (
 				77481B4F1CF321F8003B1ABB /* ViewController.m in Sources */,
 				77481B4C1CF321F8003B1ABB /* AppDelegate.m in Sources */,
+				77481B601CF32A85003B1ABB /* SVStudent.m in Sources */,
 				77481B491CF321F8003B1ABB /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
