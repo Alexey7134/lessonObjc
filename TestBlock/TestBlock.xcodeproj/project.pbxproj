@@ -14,6 +14,7 @@
 		77481B541CF321F8003B1ABB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77481B531CF321F8003B1ABB /* Assets.xcassets */; };
 		77481B571CF321F8003B1ABB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77481B551CF321F8003B1ABB /* LaunchScreen.storyboard */; };
 		77481B601CF32A85003B1ABB /* SVStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 77481B5F1CF32A85003B1ABB /* SVStudent.m */; };
+		77481B631CF36F3F003B1ABB /* SVPatient.m in Sources */ = {isa = PBXBuildFile; fileRef = 77481B621CF36F3F003B1ABB /* SVPatient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		77481B581CF321F8003B1ABB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77481B5E1CF32A85003B1ABB /* SVStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVStudent.h; sourceTree = "<group>"; };
 		77481B5F1CF32A85003B1ABB /* SVStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVStudent.m; sourceTree = "<group>"; };
+		77481B611CF36F3F003B1ABB /* SVPatient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPatient.h; sourceTree = "<group>"; };
+		77481B621CF36F3F003B1ABB /* SVPatient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVPatient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +64,8 @@
 		77481B461CF321F8003B1ABB /* TestBlock */ = {
 			isa = PBXGroup;
 			children = (
+				77481B611CF36F3F003B1ABB /* SVPatient.h */,
+				77481B621CF36F3F003B1ABB /* SVPatient.m */,
 				77481B4A1CF321F8003B1ABB /* AppDelegate.h */,
 				77481B4B1CF321F8003B1ABB /* AppDelegate.m */,
 				77481B5E1CF32A85003B1ABB /* SVStudent.h */,
@@ -155,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				77481B4F1CF321F8003B1ABB /* ViewController.m in Sources */,
+				77481B631CF36F3F003B1ABB /* SVPatient.m in Sources */,
 				77481B4C1CF321F8003B1ABB /* AppDelegate.m in Sources */,
 				77481B601CF32A85003B1ABB /* SVStudent.m in Sources */,
 				77481B491CF321F8003B1ABB /* main.m in Sources */,
