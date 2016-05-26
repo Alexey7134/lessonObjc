@@ -19,15 +19,28 @@ NSString *const SVPatientIllReportKey = @"SVPatientIllReportKey";
     NSDictionary *report;
 }
 
-@property (copy, nonatomic)HealthPatientBlock blockPatient;
-
 @end
 
 @implementation SVPatient
 
 -(instancetype)init{
     self = [super init];
+    
+    if (self) {
+        if (![self howIFeel]) {
+            _temperature = 36.6 + arc4random()%4;
+            _illness = arc4random()%4;
+            _partBody =  arc4random()%5;
+            [self performSelector:@selector(patientFeelBad) withObject:nil afterDelay:arc4random()%15];
+        }
+    }
+    
     return self;
+}
+
+-(void)patientFeelBad{
+    __weak SVPatient *patientSelf = self;
+    _blockPatient(patientSelf);
 }
 
 -(NSString *)returnStringBodyPart:(SVPartBody)partBody{
@@ -57,9 +70,8 @@ NSString *const SVPatientIllReportKey = @"SVPatientIllReportKey";
     NSLog(@"My hurts in %@", [self returnStringBodyPart:self.partBody]);
 }
 
--(BOOL)howYouFeel{
+-(BOOL)howIFeel{
     BOOL feelGood = arc4random()%2;
-    
     return feelGood;
 }
 
@@ -80,11 +92,11 @@ NSString *const SVPatientIllReportKey = @"SVPatientIllReportKey";
 
 -(void)returnReportPatient{
     
-    __weak SVPatient *patientSelf = self;
-    _blockPatient = ^{
-        NSLog(@"report patient %@",patientSelf.name);
-        
-    };
+//    __weak SVPatient *patientSelf = self;
+//    _blockPatient = ^{
+//        NSLog(@"report patient %@",patientSelf.name);
+//        
+//    };
     //return _blockPatient;
 }
 

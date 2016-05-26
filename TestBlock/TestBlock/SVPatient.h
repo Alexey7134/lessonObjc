@@ -27,7 +27,7 @@ extern NSString *const SVPatientTemperatureReportKey;
 extern NSString *const SVPatientBodyPartReportKey;
 extern NSString *const SVPatientIllReportKey;
 
-typedef void(^HealthPatientBlock)(void);
+typedef void (^HealthPatientBlock)(id patient);
 
 @interface SVPatient : NSObject
 
@@ -39,8 +39,9 @@ typedef void(^HealthPatientBlock)(void);
 @property(assign, nonatomic)BOOL shot;
 @property(assign, nonatomic)BOOL assessmentDoctor;
 
+@property (copy, nonatomic)HealthPatientBlock blockPatient;
 
--(BOOL)howYouFeel;
+
 -(void)takePill;
 -(void)makeShot;
 -(void)myHurts;

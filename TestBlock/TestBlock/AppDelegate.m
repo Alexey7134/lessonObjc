@@ -11,7 +11,7 @@
 #import "SVPatient.h"
 
 typedef void(^ReturnStringBlock)(NSString*);
-typedef void (^PatientHealthBlock)(SVPatient *patient);
+typedef void (^PatientHealthBlock)(id patient);
 
 const NSInteger MAX_PATIENT = 20;
 const CGFloat NORMAL_TEMPERATURE = 36.6;
@@ -19,8 +19,8 @@ const CGFloat NORMAL_TEMPERATURE = 36.6;
 @interface AppDelegate (){
     NSArray *students;
     NSArray *patients;
-    //PatientHealthBlock patientHealthBlock;
     NSArray *patientsList;
+    PatientHealthBlock patientHealthblock;
 }
 
 @end
@@ -29,7 +29,6 @@ const CGFloat NORMAL_TEMPERATURE = 36.6;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
     /*
     void (^testBlock)(void) = ^(void){
         NSLog(@"Test block");
@@ -37,8 +36,6 @@ const CGFloat NORMAL_TEMPERATURE = 36.6;
     
     testBlock();
     */
-
-    
     ReturnStringBlock stringBlock = ^(NSString* someString){
         NSLog(@"%@", someString);
     };
@@ -54,33 +51,26 @@ const CGFloat NORMAL_TEMPERATURE = 36.6;
    // NSLog(@"-----------------------------After sorted--------------------------------");
     [self showArrayStudents:students];
     
-    patients = [self createPatientList];
-    
     __weak AppDelegate *appDelegateSelf = self;
-//    PatientHealthBlock block = ^(SVPatient *patient){
-//        [patient myHurts];
-//        BOOL youAreOkay = [appDelegateSelf chekTemperaturePatient:patient];
-//        if (youAreOkay) {
-//            return;
-//        }
-//        [appDelegateSelf addToPatientsList:patient appSelf:appDelegateSelf];
-//    };
-//    
-//    [self patientCheckHealth:block];
-    
-    [self patientCheckHealth:^(SVPatient *patient) {
+    patientHealthblock = ^(SVPatient *patient) {
         [patient myHurts];
         BOOL youAreOkay = [appDelegateSelf chekTemperaturePatient:patient];
         if (youAreOkay) {
             return;
         }
         [appDelegateSelf addToPatientsList:patient appSelf:appDelegateSelf];
-    }];
+    };
     
-
+    patients = [self createPatientList];
+    
+    //[self goToDoctor];
     
     return YES;
 }
+
+//-(void)goToDoctor{
+//    [self patientCheckHealth:patientHealthblock];
+//}
 
 -(void)blockTestMethod:(void(^)(NSString * nameString))block{
     block([NSString stringWithFormat:@"%@%s",@"It is test block string method ",__PRETTY_FUNCTION__]);
@@ -124,13 +114,13 @@ const CGFloat NORMAL_TEMPERATURE = 36.6;
     }
 }
 
--(void)patientCheckHealth:(PatientHealthBlock)block{
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-    for (NSInteger i = 0; i < [patients count]; i++) {
-        block([patients objectAtIndex:i]);
-    }
-    
-}
+//-(void)patientCheckHealth:(PatientHealthBlock)block{
+//    NSLog(@"%s", __PRETTY_FUNCTION__);
+//    for (NSInteger i = 0; i < [patients count]; i++) {
+//        block([patients objectAtIndex:i]);
+//    }
+//    
+//}
 
 -(NSArray *)createPatientList{
     //create patients list
@@ -138,9 +128,7 @@ const CGFloat NORMAL_TEMPERATURE = 36.6;
     for (NSInteger i = 0; i < MAX_PATIENT; i++) {
         SVPatient *patient = [[SVPatient alloc] init];
         patient.name = [NSString stringWithFormat:@"Viktor%d", i];
-        patient.temperature = NORMAL_TEMPERATURE + arc4random()%4;
-        patient.illness = arc4random()%4;
-        patient.partBody =  arc4random()%5;
+        patient.blockPatient = patientHealthblock;
         array = [array arrayByAddingObject:patient];
     }
     return array;
