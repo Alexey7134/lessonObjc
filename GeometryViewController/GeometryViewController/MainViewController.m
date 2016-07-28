@@ -12,11 +12,7 @@ NSInteger const MAX_RECT_VIEW = 8;
 
 @interface MainViewController (){
     UIColor *colorChessRect;
-    
 }
-
-
-@property(weak, nonatomic)UIView *viewGame;
 
 @end
 
@@ -31,8 +27,6 @@ NSInteger const MAX_RECT_VIEW = 8;
     colorChessRect = [UIColor blackColor];//default
     
     [self createViewsChess:self.view borderWindth:2];
-    self.viewGame = self.view.subviews[0];
-    
 }
 
 -(void)createViewsChess:(UIView *)mainView borderWindth:(CGFloat)borderWindth{
@@ -48,7 +42,7 @@ NSInteger const MAX_RECT_VIEW = 8;
     viewChess.layer.borderColor = blackColor.CGColor;
     viewChess.layer.borderWidth = borderWindth;
     viewChess.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin |
-                                UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
+                                    UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
     [mainView addSubview:viewChess];
     
     NSInteger sizeRect =  sizeGameChess/MAX_RECT_VIEW;
@@ -75,24 +69,12 @@ NSInteger const MAX_RECT_VIEW = 8;
                            alpha:1];
 }
 
-//-(CGRect)getRectNew:(UIView *)view subview:(UIView *)subview{
-//    NSInteger sizeRect =  view.frame.size.width/MAX_RECT_VIEW;
-//    
-//    NSInteger centerHPos = view.frame.size.height/2 - view.frame.size.width/2;
-//    
-//    return CGRectMake(subview.frame.origin.x, centerHPos  + subview.frame.origin.y, sizeRect,sizeRect);
-//}
-//
-//-(void)changeAllViewsFromView:(UIView *)view{
-//    for (UIView *subView in view.subviews) {
-//        subView.frame = [self getRectNew:view subview:subView];
-//    }
-//}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor whiteColor]];
 }
+
+#pragma mark - Orientation -
 
 -(UIInterfaceOrientationMask)supportedInterfaceOrientations{
     return UIInterfaceOrientationMaskAll;
@@ -100,6 +82,7 @@ NSInteger const MAX_RECT_VIEW = 8;
 
 -(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator{
     [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+    
     UIColor *newColor = [self randomColor];
     
     if([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait){
@@ -108,13 +91,10 @@ NSInteger const MAX_RECT_VIEW = 8;
         
     }
     
-    [self changeColorInViews:self.viewGame.subviews newColour:newColor oldColor:colorChessRect];
-    self.viewGame.layer.borderColor = newColor.CGColor;
+    UIView * viewChess = self.view.subviews[0];
+    [self changeColorInViews:viewChess.subviews newColour:newColor oldColor:colorChessRect];
+    viewChess.layer.borderColor = newColor.CGColor;
     colorChessRect = newColor;
-    
-   // [self changeAllViewsFromView:self.view];
-    
-    
 }
 
 
