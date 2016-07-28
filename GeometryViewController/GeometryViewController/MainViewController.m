@@ -10,6 +10,8 @@
 
 @interface MainViewController ()
 
+@property(weak, nonatomic)UIView *viewGame;
+
 @end
 
 @implementation MainViewController
@@ -20,32 +22,45 @@
 -(void)loadView{
     [super loadView];
     
-    [self createViewsChess:self.view sizeRect:30 borderWindth:2];
-    
+    [self createViewsChess:self.view borderWindth:2];
+    self.viewGame = self.view.subviews[0];
+    //self.viewGame.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 }
 
--(void)createViewsChess:(UIView *)mainView sizeRect:(NSInteger)sizeRect borderWindth:(CGFloat)borderWindth{
-    NSInteger maxCountView = 8;
+-(void)createViewsChess:(UIView *)mainView borderWindth:(CGFloat)borderWindth{
+    NSInteger maxRectView = 8;
     UIColor *blackColor = [UIColor blackColor];
     UIColor *whiteColor = [UIColor whiteColor];
+    NSInteger sizeRect =  mainView.frame.size.width/maxRectView;
     
-    UIView *viewMain = [[UIView alloc] initWithFrame:CGRectMake(0, 0, (sizeRect * maxCountView) + borderWindth, (sizeRect * maxCountView) + borderWindth)];
-    viewMain.layer.borderColor = blackColor.CGColor;
-    viewMain.layer.borderWidth = borderWindth;
-    [mainView addSubview:viewMain];
+    UIView *viewChess = [[UIView alloc] initWithFrame:CGRectMake(0, 0, (sizeRect * maxRectView) + borderWindth, (sizeRect * maxRectView) + borderWindth)];
+    viewChess.layer.borderColor = blackColor.CGColor;
+    viewChess.layer.borderWidth = borderWindth;
+    [mainView addSubview:viewChess];
+    
+    NSInteger centerPos = mainView.frame.size.height/2 - mainView.frame.size.width/2;
 
-    for (NSInteger i = 0; i < maxCountView; i++) {
-        for (NSInteger j = 0; j < maxCountView; j++) {
-            UIView *view = [[UIView alloc] initWithFrame:CGRectMake(sizeRect*i, sizeRect*j, sizeRect, sizeRect)];
+    for (NSInteger i = 0; i < maxRectView; i++) {
+        for (NSInteger j = 0; j < maxRectView; j++) {
+            UIView *view = [[UIView alloc] initWithFrame:CGRectMake(sizeRect*i,centerPos + sizeRect*j, sizeRect, sizeRect)];
             [view setBackgroundColor:((i+j)%2 == 0) ? blackColor : whiteColor];
+            view.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin |
+                                    UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin |
+                                    UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
             [mainView addSubview:view];
         }
     }
 }
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor whiteColor]];
+}
+
+-(UIInterfaceOrientationMask)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskAll;
 }
 
 
