@@ -8,7 +8,9 @@
 
 #import "MainViewController.h"
 
-@interface MainViewController ()
+@interface MainViewController (){
+    UIColor *colorChessRect;
+}
 
 @property(weak, nonatomic)UIView *viewGame;
 
@@ -22,9 +24,15 @@
 -(void)loadView{
     [super loadView];
     
+    colorChessRect = [UIColor blackColor];//default
+    
+    
     [self createViewsChess:self.view borderWindth:2];
     self.viewGame = self.view.subviews[0];
-    //self.viewGame.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    
+//    UIColor *newColor = [self randomColor];
+//    [self changeColorInViews:self.view.subviews newColour:newColor oldColor:colorChessRect];
+//    colorChessRect = [UIColor yellowColor];
 }
 
 -(void)createViewsChess:(UIView *)mainView borderWindth:(CGFloat)borderWindth{
@@ -36,7 +44,7 @@
     UIView *viewChess = [[UIView alloc] initWithFrame:CGRectMake(0, 0, (sizeRect * maxRectView) + borderWindth, (sizeRect * maxRectView) + borderWindth)];
     viewChess.layer.borderColor = blackColor.CGColor;
     viewChess.layer.borderWidth = borderWindth;
-    [mainView addSubview:viewChess];
+    //[mainView addSubview:viewChess];
     
     NSInteger centerPos = mainView.frame.size.height/2 - mainView.frame.size.width/2;
 
@@ -52,7 +60,18 @@
     }
 }
 
+-(void)changeColorInViews:(NSArray *)arrayViews newColour:(UIColor *)color oldColor:(UIColor *)oldColor{
+    for (UIView *view in arrayViews) {
+        if (CGColorEqualToColor(view.backgroundColor.CGColor, oldColor.CGColor))[view setBackgroundColor:color];
+    }
+}
 
+-(UIColor *)randomColor{
+    return [UIColor colorWithRed:((arc4random()%10 +3)*.1f)
+                           green:((arc4random()%10 +3)*.1f)
+                            blue:((arc4random()%10 +3)*.1f)
+                           alpha:1];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -61,6 +80,14 @@
 
 -(UIInterfaceOrientationMask)supportedInterfaceOrientations{
     return UIInterfaceOrientationMaskAll;
+}
+
+-(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator{
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+    
+    UIColor *newColor = [self randomColor];
+    [self changeColorInViews:self.view.subviews newColour:newColor oldColor:colorChessRect];
+    colorChessRect = newColor;
 }
 
 
