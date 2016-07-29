@@ -54,7 +54,7 @@ NSString const *RECT_WHITE_KEY = @"rectWhiteColor";
     
     NSInteger heightChessPos = align/2 - sizeGameChess/2;
     
-    UIView *viewChess = [[UIView alloc] initWithFrame:CGRectMake(0, heightChessPos, sizeGameChess, sizeGameChess)];
+    UIView *viewChess = [[UIView alloc] initWithFrame:CGRectMake(mainView.bounds.origin.x, heightChessPos, sizeGameChess, sizeGameChess)];
     viewChess.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin |
                                     UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
     [mainView addSubview:viewChess];
@@ -107,8 +107,11 @@ NSString const *RECT_WHITE_KEY = @"rectWhiteColor";
     }
     
     NSInteger sizeRect =  sizeGameChess/MAX_RECT_VIEW;
+    NSInteger countWhite = 0;
     for (NSInteger i = 0; i < MAX_CHECKERS; i++) {
-        UIView *viewRect = [arrayBlackRect objectAtIndex:i];
+        if(i == (MAX_CHECKERS/2)) countWhite += (MAX_RECT_VIEW);
+        UIView *viewRect = [arrayBlackRect objectAtIndex:countWhite];
+        countWhite++;
         UIView *viewChecker = [[UIView alloc] initWithFrame:CGRectMake(viewRect.frame.origin.x,viewRect.frame.origin.y, sizeRect, sizeRect)];
         viewChecker.layer.cornerRadius = viewChecker.bounds.size.width/2;
         viewChecker.layer.masksToBounds = YES;
@@ -182,6 +185,54 @@ NSString const *RECT_WHITE_KEY = @"rectWhiteColor";
     [self changeColorInViews:viewChess.subviews newColour:newColor oldColor:colorChessRect];
     viewChess.layer.borderColor = newColor.CGColor;
     colorChessRect = newColor;
+    
+    [self mixCheckers];
+    
+}
+
+-(NSArray *)getBLackCheckers:(UIView *)view{
+    UIView *viewCheckers = [self getViewCheckers:view];
+    NSMutableArray *array = [NSMutableArray array];
+    UIColor *checkerColor = [dicStartColors objectForKey:CHECKER_BLACK_KEY];
+    for (UIView *view in viewCheckers.subviews) {
+        if(CGColorEqualToColor(view.backgroundColor.CGColor, checkerColor.CGColor))[array addObject:view];
+    }
+    return array;
+}
+
+-(NSArray *)getWhiteCheckers:(UIView *)view{
+    UIView *viewCheckers = [self getViewCheckers:view];;
+    NSMutableArray *array = [NSMutableArray array];
+    UIColor *checkerColor = [dicStartColors objectForKey:CHECKER_WHITE_KEY];
+    for (UIView *view in viewCheckers.subviews) {
+        if(CGColorEqualToColor(view.backgroundColor.CGColor, checkerColor.CGColor))[array addObject:view];
+    }
+    return array;
+}
+
+-(void)mixCheckers{
+    __weak MainViewController *selfViewController = self;
+    [UIView animateWithDuration:2 animations:^{
+        
+        NSArray *blackCheckers = [selfViewController getBLackCheckers:selfViewController.view];
+        NSArray *whiteCheckers = [selfViewController getWhiteCheckers:selfViewController.view];
+        
+        if([blackCheckers count] < [whiteCheckers count] ||
+           [blackCheckers count] > [whiteCheckers count]){
+            NSLog(@"problem with arrays count blackCheckers %lu : whiteCheckers %lu", (unsigned long)[blackCheckers count], (unsigned long)[whiteCheckers count]);
+            return ;
+        }
+        
+        for (NSInteger i = 0; i < [blackCheckers count]; i++) {
+            UIView *viewBlackChecker = [blackCheckers objectAtIndex:i];
+            UIView *viewWhiteChecker = [whiteCheckers objectAtIndex:i];
+            
+            CGPoint point = CGPointMake(viewBlackChecker.frame.origin.x, viewBlackChecker.frame.origin.y) ;
+            viewBlackChecker.frame = CGRectMake(viewWhiteChecker.frame.origin.x, viewWhiteChecker.frame.origin.y, viewBlackChecker.frame.size.width, viewBlackChecker.frame.size.height);
+            viewWhiteChecker.frame = CGRectMake(point.x, point.y, viewWhiteChecker.frame.size.width, viewWhiteChecker.frame.size.height);
+            
+        }
+    }];
 }
 
 
