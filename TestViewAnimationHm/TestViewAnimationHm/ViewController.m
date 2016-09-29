@@ -54,6 +54,24 @@ NSString *const VIEW_ROTATION_KEY = @"rotation";
         
         [self viewChangeAnimWihtDictionary:dicOption];
     }
+    
+    CGPoint point = [self randomPos:self.view childViewSize:CGSizeMake(100, 100)];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(point.x, point.y, 100, 300)];
+    imageView.backgroundColor = [UIColor blackColor];
+    imageView.image = [UIImage imageNamed:@"0024h5ka"];
+    /*
+    imageView.animationImages =  [[NSArray alloc] initWithObjects:[UIImage imageNamed:@"character1"],
+                                  [UIImage imageNamed:@"character2"],
+                                  [UIImage imageNamed:@"character3"],
+                                  [UIImage imageNamed:@"character4"],
+                                  [UIImage imageNamed:@"character5"],
+                                  [UIImage imageNamed:@"character6"],
+                                  [UIImage imageNamed:@"character7"],
+                                  [UIImage imageNamed:@"character8"],nil];
+     */
+    imageView.animationDuration = 2;
+    [self.view addSubview:imageView];
+    [imageView startAnimating];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
