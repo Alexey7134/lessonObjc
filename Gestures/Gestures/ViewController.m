@@ -71,22 +71,11 @@ NSInteger const PERSON_IMAGE_INDEX_START = 1;
     [self.view addGestureRecognizer:rotationGesture];
     rotationGesture.delegate = self;
     
-    
-    
-//    UITapGestureRecognizer *tapDoubleGesture = [[UITapGestureRecognizer alloc] initWithTarget:self
-//                                                                                       action:@selector(handleTapDoubleFingersOne:)];
-//    tapDoubleGesture.numberOfTapsRequired =2;
-//    [self.view addGestureRecognizer:tapDoubleGesture];
-    
     UITapGestureRecognizer *tapDoubleFingerTwoGesture = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                  action:@selector(handleTapDoubleFingersTwo:)];
     tapDoubleFingerTwoGesture.numberOfTapsRequired =2;
     tapDoubleFingerTwoGesture.numberOfTouchesRequired = 2;
     [self.view addGestureRecognizer:tapDoubleFingerTwoGesture];
-    //tapDoubleFingerTwoGesture.delegate = self;
-    
-
-
 }
 
 #pragma marks help functions
@@ -105,36 +94,20 @@ NSInteger const PERSON_IMAGE_INDEX_START = 1;
 -(TestView *)getView:(CGSize)size{
     CGFloat x = (float)(arc4random() % 100);
     CGFloat y = (float)(arc4random() % 100);
-    //CGFloat w = (float)(arc4random() % 100) + 50;
-    //CGFloat h = (float)(arc4random() % 100) + 50;
     TestView *view = [[TestView alloc] initWithFrame:CGRectMake(x, y, size.width, size.height)];
     view.scale = 1.f;
     view.angle = 0;
     return view;
 }
 
--(void)animation:(TestView *) view{
-    //transform = CGAffineTransformScale(, 0.8f, 0.8f)
-    //view.transform = CGAffineTransformMakeScale(0.8f, 0.8f);
-    
-    //view.scale = view.transform;
-}
-
 #pragma marks Gestures
 
 
 -(void)handleTap:(UITapGestureRecognizer *)tap{
-    //self.viewTest.backgroundColor = [self getColor];
     [self.viewTest startAnimating];
     [UIImageView animateWithDuration:2 animations:^{
          self.viewTest.center = [tap locationInView:self.view];
     }];
-}
-
--(void)handleTapDoubleFingersOne:(UITapGestureRecognizer *)tap{
-    //NSLog(@"tap double fingers one :%@", NSStringFromCGPoint([tap locationInView:self.view]));
-    //[self animation:self.viewTest];
-//    self.viewTest.transform = CGAffineTransformScale(self.viewTest.transform, 1.2f, 1.2f);
 }
 
 -(void)handleTapDoubleFingersTwo:(UITapGestureRecognizer *)tap{
@@ -143,15 +116,27 @@ NSInteger const PERSON_IMAGE_INDEX_START = 1;
     }
 }
 -(void)handleSwipeRight:(UISwipeGestureRecognizer *)swipe{
-    [UIImageView animateWithDuration:2 animations:^{
-        self.viewTest.transform = CGAffineTransformRotate(self.viewTest.transform, M_PI);
-    }];
+    [UIImageView animateWithDuration:2
+                               delay:0
+                             options:UIViewAnimationOptionBeginFromCurrentState
+                          animations:^{
+                              self.viewTest.transform = CGAffineTransformRotate(self.viewTest.transform, 3.14);
+                          }
+                          completion:^(BOOL finished) {
+                              
+                          }];
 }
 
 -(void)handleSwipeLeft:(UISwipeGestureRecognizer *)swipe{
-    [UIImageView animateWithDuration:2 animations:^{
-        self.viewTest.transform = CGAffineTransformRotate(self.viewTest.transform, -M_PI);
-    }];
+    [UIImageView animateWithDuration:2
+                               delay:0
+                             options:UIViewAnimationOptionBeginFromCurrentState
+                          animations:^{
+                               self.viewTest.transform = CGAffineTransformRotate(self.viewTest.transform, -3.14);
+                          }
+                          completion:^(BOOL finished) {
+                              
+                          }];
 }
 
 -(void)handlePinch:(UIPinchGestureRecognizer *)recognize{
@@ -180,9 +165,5 @@ NSInteger const PERSON_IMAGE_INDEX_START = 1;
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
     return YES;
 }
-
-//- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRequireFailureOfGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
-//    return [gestureRecognizer isKindOfClass:[UISwipeGestureRecognizer class]] && [otherGestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]];
-//}
 
 @end
