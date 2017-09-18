@@ -87,6 +87,19 @@
         }
     }
     CGContextStrokePath(context);
+    
+    //drawBezier
+    CGPoint startBezier = CGPointMake(CGRectGetMaxX(rectForEllipse), CGRectGetMaxY(rectForStar) + CGRectGetHeight(rectForStar));
+    CGPoint endBezier = CGPointMake(CGRectGetMaxX(rectForStar), CGRectGetMaxY(rectForStar) + CGRectGetHeight(rectForStar));
+    CGPoint vector1 = CGPointMake(startBezier.x + 10 , startBezier.y - 100);
+    CGPoint vector2 = CGPointMake(endBezier.x + 40 , endBezier.y - 80);
+    CGContextMoveToPoint(context, startBezier.x, startBezier.y);
+    CGContextAddCurveToPoint(context, vector1.x, vector1.y, vector2.x, vector2.y, endBezier.x, endBezier.y);
+    CGContextSetStrokeColorWithColor(context, [UIColor redColor].CGColor);
+    CGContextStrokePath(context);
+    
+    
+    
 }
 
 -(NSArray*)getStarVertex:(CGRect)rect vertexCount:(NSInteger)count{
