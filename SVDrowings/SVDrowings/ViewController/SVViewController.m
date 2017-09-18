@@ -22,7 +22,10 @@
     
     self.navigationController.navigationBarHidden = YES;
     
-    self.viewTest = [[SVView alloc] init];
+    
+    self.viewTest = [[SVView alloc] initWithFrame:CGRectMake(CGRectGetMinX(self.view.bounds), CGRectGetMinY(self.view.bounds), CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds))];
+    
+    
     [self.view addSubview:self.viewTest];
 }
 
@@ -34,17 +37,8 @@
 
 -(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator{
     [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
-    
-    NSLog(@"ayayaya");
+
     [self.viewTest setNeedsDisplay];
-    
-    
-//    if([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait){
-//        newColor = [UIColor blackColor];
-//    }else if([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeLeft){
-//        
-//    }
-    
 }
 
 

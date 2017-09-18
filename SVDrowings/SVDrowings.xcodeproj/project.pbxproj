@@ -298,6 +298,7 @@
 				779782AF1F36189E008D4298 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
