@@ -7,13 +7,20 @@
 //
 
 #import "SVView.h"
+@interface SVView ()
 
+//@property(nonatomic,strong)CAShapeLayer *layerForDraw;
+//@property(assign,nonatomic)CGPoint lastpoint;
+
+@end
 @implementation SVView
 
 -(id)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
         [self setBackgroundColor:[UIColor clearColor]];
     }
+//    self.layerForDraw = [CAShapeLayer layer];
+//    [self.layer addSublayer:self.layerForDraw];
     return self;
 }
 
@@ -133,7 +140,6 @@
     CGContextMoveToPoint(context, CGRectGetMidX(rectForStar2), CGRectGetMinY(rectForStar2));
     CGContextAddArc(context, CGRectGetMaxX(rectForStar2), CGRectGetMinY(rectForStar2), CGRectGetHeight(rectForStar)/2, M_PI, 0, NO);
     CGContextStrokePath(context);
-    
 }
 
 -(NSArray*)getStarVertex:(CGRect)rect vertexCount:(NSInteger)count radiusStar:(CGFloat)radius{
@@ -190,5 +196,16 @@
     }];
     return array;
 }
+
+//-(void)drawOnLayer:(CGPoint)point{
+//    UIBezierPath *linePath = [UIBezierPath bezierPath];
+//    [linePath moveToPoint:point];
+//    [linePath addLineToPoint:point];
+//    
+//    self.layerForDraw.path = [linePath CGPath];
+//    self.layerForDraw.strokeColor = [[UIColor redColor] CGColor];
+//    self.layerForDraw.lineWidth = 7.0;
+//    self.lastpoint = point;
+//}
 
 @end
