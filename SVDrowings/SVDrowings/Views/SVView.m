@@ -98,7 +98,17 @@
     CGContextSetStrokeColorWithColor(context, [UIColor redColor].CGColor);
     CGContextStrokePath(context);
     
-    
+    //draw sin
+    CGRect rectForSin = CGRectMake(CGRectGetMinX(rectForEllipse), CGRectGetMinY(rectForStar), 300, 300);
+    int y;
+    for(int x= CGRectGetMinX(rectForSin); x < CGRectGetWidth(rectForSin); x++)
+    {
+        y = ((CGRectGetHeight(rectForSin)/6) * sin(((x*4) % 360) * M_PI/180)) + CGRectGetMidY(rectForSin);
+        if (x == 0) CGContextMoveToPoint(context, x, y);
+        else CGContextAddLineToPoint(context, x, y);
+    }
+    CGContextSetStrokeColorWithColor(context, [UIColor cyanColor].CGColor);
+    CGContextStrokePath(context);
     
 }
 
