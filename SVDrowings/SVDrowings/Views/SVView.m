@@ -54,26 +54,43 @@
                                     CGRectGetWidth(rectForEllipse),
                                     CGRectGetHeight(rectForEllipse));
     
-    CGPoint startPoint = CGPointMake(CGRectGetMidX(rectForStar), CGRectGetMinY(rectForStar));
-    CGContextMoveToPoint(context, startPoint.x, startPoint.y);
-    
-    NSArray* arrayPoints = [self getStarVertex:rectForStar vertexCount:5];
+    NSArray* arrayPoints = [self getStarVertex:rectForStar vertexCount:5 radiusStar:50];
     for (NSInteger index = 0; index < [arrayPoints count]; index++) {
         CGPoint point = [[arrayPoints objectAtIndex:index] CGPointValue];
+        if (index == 0)CGContextMoveToPoint(context, point.x, point.y);
         CGContextAddLineToPoint(context, point.x, point.y);
     }
     CGContextSetStrokeColorWithColor(context, [UIColor redColor].CGColor);
     CGContextSetFillColorWithColor(context, [UIColor brownColor].CGColor);
     CGContextDrawPath(context, kCGPathFillStroke);//instead of CGContextStrokePath and CGContextFillPath
+
     
     for (NSInteger index = 0; index < [arrayPoints count]; index++) {
         CGPoint point = [[arrayPoints objectAtIndex:index] CGPointValue];
         CGRect rectCircule = CGRectMake(point.x - 10, point.y - 10, 20, 20);
-       // CGContextMoveToPoint(context, point.x - CGRectGetMidX(rectCircule), point.y - CGRectGetMidY(rectCircule));
         CGContextAddEllipseInRect(context, rectCircule);
         CGContextSetFillColorWithColor(context, [UIColor purpleColor].CGColor);
         CGContextFillPath(context);
     }
+    
+    CGRect rectForStar2 = CGRectMake(CGRectGetMinX(rectForStar) - CGRectGetWidth(rectForStar),
+                                     CGRectGetMinY(rectForStar),
+                                     CGRectGetWidth(rectForStar),
+                                     CGRectGetHeight(rectForStar));
+    
+    NSArray* arrayPoints2 = [self getStarVertex:rectForStar2 vertexCount:5 radiusStar:50];
+    for (NSInteger index = 0; index < [arrayPoints2 count]; index++) {
+        CGPoint point = [[arrayPoints2 objectAtIndex:index] CGPointValue];
+        if (index == 0)CGContextMoveToPoint(context, point.x, point.y);
+        CGContextAddLineToPoint(context, point.x, point.y);
+    }
+    CGContextSaveGState(context);
+    {
+        CGContextClip(context);
+        CGContextDrawImage(context, rectForStar2, [[UIImage imageNamed:@"apple"] CGImage]);
+    }
+    CGContextRestoreGState(context);
+    
     
     arrayPoints = [self sortVertexAroundCenter:arrayPoints centerPoint:CGPointMake(CGRectGetMidX(rectForStar), CGRectGetMidY(rectForStar))];
 
@@ -110,23 +127,27 @@
     CGContextSetStrokeColorWithColor(context, [UIColor cyanColor].CGColor);
     CGContextStrokePath(context);
     
+    //draw circle
+    CGContextSetStrokeColorWithColor(context, [UIColor redColor].CGColor);
+    CGContextSetLineWidth(context, 5.f);
+    CGContextMoveToPoint(context, CGRectGetMidX(rectForStar2), CGRectGetMinY(rectForStar2));
+    CGContextAddArc(context, CGRectGetMaxX(rectForStar2), CGRectGetMinY(rectForStar2), CGRectGetHeight(rectForStar)/2, M_PI, 0, NO);
+    CGContextStrokePath(context);
+    
 }
 
--(NSArray*)getStarVertex:(CGRect)rect vertexCount:(NSInteger)count{
+-(NSArray*)getStarVertex:(CGRect)rect vertexCount:(NSInteger)count radiusStar:(CGFloat)radius{
     NSArray *arrayPoints = [[NSArray alloc] init];
-    
-    CGPoint startPoint = CGPointMake(CGRectGetMidX(rect), CGRectGetMinY(rect));
     CGPoint centerPoint = CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect));
     
     CGFloat anglePoint = 360/count;
     NSInteger pointPass = count%2 ? 2 : 1;
     CGFloat angleTurn = anglePoint * pointPass * M_PI/180;
-    CGFloat radiusStar = (centerPoint.x - startPoint.y);
     
     for (NSInteger index = 1; index < count + 2; index++) {
         
-        CGFloat vertexX = centerPoint.x + radiusStar * sinf(index * angleTurn);
-        CGFloat vertexY = centerPoint.y - radiusStar * cosf(index * angleTurn);
+        CGFloat vertexX = centerPoint.x + radius * sinf(index * angleTurn);
+        CGFloat vertexY = centerPoint.y - radius * cosf(index * angleTurn);
         
         CGPoint nextPoint = CGPointMake(vertexX, vertexY);
         arrayPoints = [arrayPoints arrayByAddingObject:[NSValue valueWithCGPoint:nextPoint]];
