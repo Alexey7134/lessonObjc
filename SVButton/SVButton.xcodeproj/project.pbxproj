@@ -1,0 +1,520 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		77F253171F71864300BE15B9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F253161F71864300BE15B9 /* main.m */; };
+		77F2531A1F71864300BE15B9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F253191F71864300BE15B9 /* AppDelegate.m */; };
+		77F253221F71864300BE15B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77F253211F71864300BE15B9 /* Assets.xcassets */; };
+		77F253301F71864300BE15B9 /* SVButtonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F2532F1F71864300BE15B9 /* SVButtonTests.m */; };
+		77F2533B1F71864300BE15B9 /* SVButtonUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F2533A1F71864300BE15B9 /* SVButtonUITests.m */; };
+		77F253491F7186CF00BE15B9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77F253481F7186CF00BE15B9 /* Default-568h@2x.png */; };
+		77F2534F1F71899E00BE15B9 /* SVMainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77F2534E1F71899E00BE15B9 /* SVMainView.xib */; };
+		77F253551F718CD300BE15B9 /* SVMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F253541F718CD300BE15B9 /* SVMainViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		77F2532C1F71864300BE15B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 77F2530A1F71864300BE15B9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 77F253111F71864300BE15B9;
+			remoteInfo = SVButton;
+		};
+		77F253371F71864300BE15B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 77F2530A1F71864300BE15B9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 77F253111F71864300BE15B9;
+			remoteInfo = SVButton;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		77F253121F71864300BE15B9 /* SVButton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SVButton.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		77F253161F71864300BE15B9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		77F253181F71864300BE15B9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		77F253191F71864300BE15B9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		77F253211F71864300BE15B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		77F253261F71864300BE15B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77F2532B1F71864300BE15B9 /* SVButtonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SVButtonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		77F2532F1F71864300BE15B9 /* SVButtonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVButtonTests.m; sourceTree = "<group>"; };
+		77F253311F71864300BE15B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77F253361F71864300BE15B9 /* SVButtonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SVButtonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		77F2533A1F71864300BE15B9 /* SVButtonUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVButtonUITests.m; sourceTree = "<group>"; };
+		77F2533C1F71864300BE15B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77F253481F7186CF00BE15B9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		77F2534E1F71899E00BE15B9 /* SVMainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SVMainView.xib; sourceTree = "<group>"; };
+		77F253531F718CD300BE15B9 /* SVMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVMainViewController.h; sourceTree = "<group>"; };
+		77F253541F718CD300BE15B9 /* SVMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVMainViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		77F2530F1F71864300BE15B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77F253281F71864300BE15B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77F253331F71864300BE15B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		77F253091F71864300BE15B9 = {
+			isa = PBXGroup;
+			children = (
+				77F253481F7186CF00BE15B9 /* Default-568h@2x.png */,
+				77F253141F71864300BE15B9 /* SVButton */,
+				77F2532E1F71864300BE15B9 /* SVButtonTests */,
+				77F253391F71864300BE15B9 /* SVButtonUITests */,
+				77F253131F71864300BE15B9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		77F253131F71864300BE15B9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				77F253121F71864300BE15B9 /* SVButton.app */,
+				77F2532B1F71864300BE15B9 /* SVButtonTests.xctest */,
+				77F253361F71864300BE15B9 /* SVButtonUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		77F253141F71864300BE15B9 /* SVButton */ = {
+			isa = PBXGroup;
+			children = (
+				77F253531F718CD300BE15B9 /* SVMainViewController.h */,
+				77F253541F718CD300BE15B9 /* SVMainViewController.m */,
+				77F2534E1F71899E00BE15B9 /* SVMainView.xib */,
+				77F253181F71864300BE15B9 /* AppDelegate.h */,
+				77F253191F71864300BE15B9 /* AppDelegate.m */,
+				77F253211F71864300BE15B9 /* Assets.xcassets */,
+				77F253261F71864300BE15B9 /* Info.plist */,
+				77F253151F71864300BE15B9 /* Supporting Files */,
+			);
+			path = SVButton;
+			sourceTree = "<group>";
+		};
+		77F253151F71864300BE15B9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				77F253161F71864300BE15B9 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		77F2532E1F71864300BE15B9 /* SVButtonTests */ = {
+			isa = PBXGroup;
+			children = (
+				77F2532F1F71864300BE15B9 /* SVButtonTests.m */,
+				77F253311F71864300BE15B9 /* Info.plist */,
+			);
+			path = SVButtonTests;
+			sourceTree = "<group>";
+		};
+		77F253391F71864300BE15B9 /* SVButtonUITests */ = {
+			isa = PBXGroup;
+			children = (
+				77F2533A1F71864300BE15B9 /* SVButtonUITests.m */,
+				77F2533C1F71864300BE15B9 /* Info.plist */,
+			);
+			path = SVButtonUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		77F253111F71864300BE15B9 /* SVButton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 77F2533F1F71864300BE15B9 /* Build configuration list for PBXNativeTarget "SVButton" */;
+			buildPhases = (
+				77F2530E1F71864300BE15B9 /* Sources */,
+				77F2530F1F71864300BE15B9 /* Frameworks */,
+				77F253101F71864300BE15B9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SVButton;
+			productName = SVButton;
+			productReference = 77F253121F71864300BE15B9 /* SVButton.app */;
+			productType = "com.apple.product-type.application";
+		};
+		77F2532A1F71864300BE15B9 /* SVButtonTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 77F253421F71864300BE15B9 /* Build configuration list for PBXNativeTarget "SVButtonTests" */;
+			buildPhases = (
+				77F253271F71864300BE15B9 /* Sources */,
+				77F253281F71864300BE15B9 /* Frameworks */,
+				77F253291F71864300BE15B9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				77F2532D1F71864300BE15B9 /* PBXTargetDependency */,
+			);
+			name = SVButtonTests;
+			productName = SVButtonTests;
+			productReference = 77F2532B1F71864300BE15B9 /* SVButtonTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		77F253351F71864300BE15B9 /* SVButtonUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 77F253451F71864300BE15B9 /* Build configuration list for PBXNativeTarget "SVButtonUITests" */;
+			buildPhases = (
+				77F253321F71864300BE15B9 /* Sources */,
+				77F253331F71864300BE15B9 /* Frameworks */,
+				77F253341F71864300BE15B9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				77F253381F71864300BE15B9 /* PBXTargetDependency */,
+			);
+			name = SVButtonUITests;
+			productName = SVButtonUITests;
+			productReference = 77F253361F71864300BE15B9 /* SVButtonUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		77F2530A1F71864300BE15B9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Siedov Viktor";
+				TargetAttributes = {
+					77F253111F71864300BE15B9 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = WZAQ2G6CH3;
+						ProvisioningStyle = Automatic;
+					};
+					77F2532A1F71864300BE15B9 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = WZAQ2G6CH3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 77F253111F71864300BE15B9;
+					};
+					77F253351F71864300BE15B9 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = WZAQ2G6CH3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 77F253111F71864300BE15B9;
+					};
+				};
+			};
+			buildConfigurationList = 77F2530D1F71864300BE15B9 /* Build configuration list for PBXProject "SVButton" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 77F253091F71864300BE15B9;
+			productRefGroup = 77F253131F71864300BE15B9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				77F253111F71864300BE15B9 /* SVButton */,
+				77F2532A1F71864300BE15B9 /* SVButtonTests */,
+				77F253351F71864300BE15B9 /* SVButtonUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		77F253101F71864300BE15B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77F253221F71864300BE15B9 /* Assets.xcassets in Resources */,
+				77F2534F1F71899E00BE15B9 /* SVMainView.xib in Resources */,
+				77F253491F7186CF00BE15B9 /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77F253291F71864300BE15B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77F253341F71864300BE15B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		77F2530E1F71864300BE15B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77F2531A1F71864300BE15B9 /* AppDelegate.m in Sources */,
+				77F253171F71864300BE15B9 /* main.m in Sources */,
+				77F253551F718CD300BE15B9 /* SVMainViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77F253271F71864300BE15B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77F253301F71864300BE15B9 /* SVButtonTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77F253321F71864300BE15B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77F2533B1F71864300BE15B9 /* SVButtonUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		77F2532D1F71864300BE15B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 77F253111F71864300BE15B9 /* SVButton */;
+			targetProxy = 77F2532C1F71864300BE15B9 /* PBXContainerItemProxy */;
+		};
+		77F253381F71864300BE15B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 77F253111F71864300BE15B9 /* SVButton */;
+			targetProxy = 77F253371F71864300BE15B9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		77F2533D1F71864300BE15B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		77F2533E1F71864300BE15B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		77F253401F71864300BE15B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = WZAQ2G6CH3;
+				INFOPLIST_FILE = SVButton/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = SV.SVButton;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		77F253411F71864300BE15B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = WZAQ2G6CH3;
+				INFOPLIST_FILE = SVButton/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = SV.SVButton;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		77F253431F71864300BE15B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = WZAQ2G6CH3;
+				INFOPLIST_FILE = SVButtonTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = SV.SVButtonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SVButton.app/SVButton";
+			};
+			name = Debug;
+		};
+		77F253441F71864300BE15B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = WZAQ2G6CH3;
+				INFOPLIST_FILE = SVButtonTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = SV.SVButtonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SVButton.app/SVButton";
+			};
+			name = Release;
+		};
+		77F253461F71864300BE15B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = WZAQ2G6CH3;
+				INFOPLIST_FILE = SVButtonUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = SV.SVButtonUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SVButton;
+			};
+			name = Debug;
+		};
+		77F253471F71864300BE15B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = WZAQ2G6CH3;
+				INFOPLIST_FILE = SVButtonUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = SV.SVButtonUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SVButton;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		77F2530D1F71864300BE15B9 /* Build configuration list for PBXProject "SVButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77F2533D1F71864300BE15B9 /* Debug */,
+				77F2533E1F71864300BE15B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		77F2533F1F71864300BE15B9 /* Build configuration list for PBXNativeTarget "SVButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77F253401F71864300BE15B9 /* Debug */,
+				77F253411F71864300BE15B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		77F253421F71864300BE15B9 /* Build configuration list for PBXNativeTarget "SVButtonTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77F253431F71864300BE15B9 /* Debug */,
+				77F253441F71864300BE15B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		77F253451F71864300BE15B9 /* Build configuration list for PBXNativeTarget "SVButtonUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77F253461F71864300BE15B9 /* Debug */,
+				77F253471F71864300BE15B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 77F2530A1F71864300BE15B9 /* Project object */;
+}
