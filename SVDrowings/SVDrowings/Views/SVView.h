@@ -9,6 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface SVView : UIView
-//-(void)drawOnLayer:(CGPoint)point;
 
 @end

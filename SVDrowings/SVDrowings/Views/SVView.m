@@ -9,9 +9,6 @@
 #import "SVView.h"
 @interface SVView ()
 
-//@property(nonatomic,strong)CAShapeLayer *layerForDraw;
-//@property(assign,nonatomic)CGPoint lastpoint;
-
 @end
 @implementation SVView
 
@@ -19,8 +16,6 @@
     if (self = [super initWithFrame:frame]) {
         [self setBackgroundColor:[UIColor clearColor]];
     }
-//    self.layerForDraw = [CAShapeLayer layer];
-//    [self.layer addSublayer:self.layerForDraw];
     return self;
 }
 
@@ -196,16 +191,5 @@
     }];
     return array;
 }
-
-//-(void)drawOnLayer:(CGPoint)point{
-//    UIBezierPath *linePath = [UIBezierPath bezierPath];
-//    [linePath moveToPoint:point];
-//    [linePath addLineToPoint:point];
-//    
-//    self.layerForDraw.path = [linePath CGPath];
-//    self.layerForDraw.strokeColor = [[UIColor redColor] CGColor];
-//    self.layerForDraw.lineWidth = 7.0;
-//    self.lastpoint = point;
-//}
 
 @end

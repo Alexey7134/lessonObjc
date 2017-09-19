@@ -8,11 +8,12 @@
 
 #import "SVViewController.h"
 #import "SVView.h"
+#import "SVPaint.h"
 
 @interface SVViewController () <UIGestureRecognizerDelegate>
 
 @property(strong,nonatomic)SVView *viewTest;
-@property(strong,nonatomic)UIImageView *imageViewPaint;
+@property(strong,nonatomic)SVPaint *paintView;
 
 @end
 
@@ -23,18 +24,15 @@
     
     self.navigationController.navigationBarHidden = YES;
     
-    
     self.viewTest = [[SVView alloc] initWithFrame:CGRectMake(CGRectGetMinX(self.view.bounds), CGRectGetMinY(self.view.bounds), CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds))];
-    
-    
     [self.view addSubview:self.viewTest];
     
+    self.paintView = [[SVPaint alloc] initWithFrame:CGRectMake(CGRectGetMinX(self.view.bounds), CGRectGetMinY(self.view.bounds), CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds))];
+    [self.view addSubview:self.paintView];
+    [self.paintView setUserInteractionEnabled:YES];
+    
     UIPanGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panRecognizerHandler:)];
-    [self.viewTest addGestureRecognizer:panRecognizer];
-
-    self.imageViewPaint = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetMinX(self.view.bounds), CGRectGetMinY(self.view.bounds), CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds))];
-    [self.view addSubview:self.imageViewPaint];
-
+    [self.paintView addGestureRecognizer:panRecognizer];
 }
 
 #pragma mark - Orientation -
@@ -52,18 +50,14 @@
 #pragma mark - Gesture handlers -
 
 -(void)panRecognizerHandler:(UIPanGestureRecognizer *)recognizer{
-    NSLog(@"panRecognizerHandler");
-    CGPoint currentPoint = CGPointMake([recognizer locationInView:self.viewTest].x, [recognizer locationInView:self.viewTest].y);
-    UIGraphicsBeginImageContext(self.view.frame.size);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    [self.imageViewPaint.image drawInRect:self.viewTest.bounds];
-//    //self.lastPoint = currentPoint
-    CGContextMoveToPoint(context, currentPoint.x, currentPoint.y);
-    CGContextSetStrokeColorWithColor(context, [UIColor redColor].CGColor);
-    CGContextAddLineToPoint(context, currentPoint.x, currentPoint.y);
-    CGContextStrokePath(context);
-    self.imageViewPaint.image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
+    CGPoint currentPoint = CGPointMake([recognizer locationInView:self.paintView].x, [recognizer locationInView:self.paintView].y);
+    if ([recognizer state] == UIGestureRecognizerStateBegan) {
+        [self.paintView beganDrawLine:currentPoint];
+    }else if ([recognizer state] == UIGestureRecognizerStateChanged){
+        [self.paintView changedDrawLine:currentPoint];
+    }else if ([recognizer state] == UIGestureRecognizerStateEnded){
+        [self.paintView endDrawLine:currentPoint];
+    }
 }
 
 @end

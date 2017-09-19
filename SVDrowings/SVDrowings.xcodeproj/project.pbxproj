@@ -14,6 +14,7 @@
 		779782B51F3619F6008D4298 /* SVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 779782B31F3619F6008D4298 /* SVViewController.m */; };
 		779782B61F3619F6008D4298 /* SVViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 779782B41F3619F6008D4298 /* SVViewController.xib */; };
 		779782B91F361B12008D4298 /* SVView.m in Sources */ = {isa = PBXBuildFile; fileRef = 779782B81F361B12008D4298 /* SVView.m */; };
+		77F253081F71509F00BE15B9 /* SVPaint.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F253071F71509F00BE15B9 /* SVPaint.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		779782B41F3619F6008D4298 /* SVViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SVViewController.xib; path = ViewController/SVViewController.xib; sourceTree = "<group>"; };
 		779782B71F361B12008D4298 /* SVView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SVView.h; path = Views/SVView.h; sourceTree = "<group>"; };
 		779782B81F361B12008D4298 /* SVView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SVView.m; path = Views/SVView.m; sourceTree = "<group>"; };
+		77F253061F71509F00BE15B9 /* SVPaint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SVPaint.h; path = Views/SVPaint.h; sourceTree = "<group>"; };
+		77F253071F71509F00BE15B9 /* SVPaint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SVPaint.m; path = Views/SVPaint.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +69,8 @@
 				7797829D1F36189E008D4298 /* AppDelegate.m */,
 				779782B21F3619F6008D4298 /* SVViewController.h */,
 				779782B31F3619F6008D4298 /* SVViewController.m */,
+				77F253061F71509F00BE15B9 /* SVPaint.h */,
+				77F253071F71509F00BE15B9 /* SVPaint.m */,
 				779782B71F361B12008D4298 /* SVView.h */,
 				779782B81F361B12008D4298 /* SVView.m */,
 				779782B41F3619F6008D4298 /* SVViewController.xib */,
@@ -155,6 +160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77F253081F71509F00BE15B9 /* SVPaint.m in Sources */,
 				779782B51F3619F6008D4298 /* SVViewController.m in Sources */,
 				7797829E1F36189E008D4298 /* AppDelegate.m in Sources */,
 				7797829B1F36189E008D4298 /* main.m in Sources */,
