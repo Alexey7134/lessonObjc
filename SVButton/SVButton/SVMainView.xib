@@ -11,15 +11,303 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SVMainViewController">
             <connections>
-                <outlet property="view" destination="4mT-jM-kam" id="ulC-4j-7sR"/>
+                <outlet property="screenLabel" destination="aet-mN-vX7" id="jTZ-FV-lpt"/>
+                <outlet property="view" destination="4mT-jM-kam" id="dhI-Zh-Tel"/>
+                <outletCollection property="nubersButtonCollection" destination="OjO-EL-mV3" id="MOW-2T-leZ"/>
+                <outletCollection property="nubersButtonCollection" destination="M6E-v9-nyX" id="wUb-ZL-FfK"/>
+                <outletCollection property="nubersButtonCollection" destination="Py1-Kg-2tg" id="gwR-jh-mTc"/>
+                <outletCollection property="nubersButtonCollection" destination="AwS-cp-4Xd" id="eps-U0-VLT"/>
+                <outletCollection property="nubersButtonCollection" destination="WSY-yW-Uka" id="cGC-gc-AcA"/>
+                <outletCollection property="nubersButtonCollection" destination="VFm-85-mTK" id="3y9-Ay-5fq"/>
+                <outletCollection property="nubersButtonCollection" destination="Vnl-fs-GRC" id="6a9-sP-oLp"/>
+                <outletCollection property="nubersButtonCollection" destination="boz-s0-Mcc" id="JQi-Yc-zYb"/>
+                <outletCollection property="nubersButtonCollection" destination="5wv-7f-mF5" id="NbO-H1-Xtc"/>
+                <outletCollection property="nubersButtonCollection" destination="Ztc-U7-IiT" id="Ies-yj-8bh"/>
+                <outletCollection property="nubersButtonCollection" destination="gHk-Gx-Wo8" id="JXv-HZ-eLl"/>
+                <outletCollection property="calcButtonCollection" destination="v4B-AI-Qt9" id="2gj-zi-A2P"/>
+                <outletCollection property="calcButtonCollection" destination="JkN-1Q-Mjd" id="1Gg-Uq-YhY"/>
+                <outletCollection property="calcButtonCollection" destination="IZ0-uw-57c" id="n6N-p1-RBW"/>
+                <outletCollection property="calcButtonCollection" destination="2hd-db-2wU" id="IBW-ON-xpu"/>
+                <outletCollection property="calcButtonCollection" destination="wLa-1t-swc" id="Pkc-6g-e8v"/>
+                <outletCollection property="settingNumberButtonCollection" destination="xVg-ha-d52" id="Jjs-1y-FJK"/>
+                <outletCollection property="settingNumberButtonCollection" destination="N4W-3y-YOf" id="t7d-uD-FPT"/>
+                <outletCollection property="settingNumberButtonCollection" destination="l8j-Vd-AWA" id="uZQ-Hu-ysA"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="4mT-jM-kam">
+        <view contentMode="scaleToFill" id="4mT-jM-kam" customClass="SVCalculatorView">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-            <point key="canvasLocation" x="-21" y="83"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aet-mN-vX7">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="184"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="60"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xVg-ha-d52" customClass="SVButton">
+                    <rect key="frame" x="16" y="192" width="70" height="70"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                    <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <size key="titleShadowOffset" width="1" height="1"/>
+                    <state key="normal" title="AC">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="settingNumberAction:" destination="-1" eventType="touchUpInside" id="UU4-MX-XNB"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="N4W-3y-YOf" customClass="SVButton">
+                    <rect key="frame" x="107" y="192" width="70" height="70"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                    <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <size key="titleShadowOffset" width="1" height="1"/>
+                    <state key="normal" title="+/-">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="settingNumberAction:" destination="-1" eventType="touchUpInside" id="DEZ-zD-rbt"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="l8j-Vd-AWA" customClass="SVButton">
+                    <rect key="frame" x="198" y="192" width="70" height="70"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                    <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <size key="titleShadowOffset" width="1" height="1"/>
+                    <state key="normal" title="%">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="settingNumberAction:" destination="-1" eventType="touchUpInside" id="6Ix-ru-VAa"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="14" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="v4B-AI-Qt9" customClass="SVButton">
+                    <rect key="frame" x="289" y="190" width="70" height="70"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                    <color key="backgroundColor" red="1" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <size key="titleShadowOffset" width="1" height="1"/>
+                    <state key="normal" title="/">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="calcAction:" destination="-1" eventType="touchUpInside" id="DO5-EP-LrB"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gHk-Gx-Wo8" customClass="SVButton">
+                    <rect key="frame" x="16" y="283" width="70" height="70"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                    <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <size key="titleShadowOffset" width="1" height="1"/>
+                    <state key="normal" title="7">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="sentNumberAction:" destination="-1" eventType="touchUpInside" id="0za-VV-Kdh"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VFm-85-mTK" customClass="SVButton">
+                    <rect key="frame" x="16" y="383" width="70" height="70"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                    <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <size key="titleShadowOffset" width="1" height="1"/>
+                    <state key="normal" title="4">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                            <integer key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="35"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="sentNumberAction:" destination="-1" eventType="touchUpInside" id="s2T-rX-zt0"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Py1-Kg-2tg" customClass="SVButton">
+                    <rect key="frame" x="16" y="481" width="70" height="70"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                    <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <size key="titleShadowOffset" width="1" height="1"/>
+                    <state key="normal" title="1">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="sentNumberAction:" destination="-1" eventType="touchUpInside" id="pWq-NF-xTe"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ztc-U7-IiT" customClass="SVButton">
+                    <rect key="frame" x="107" y="283" width="70" height="70"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                    <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <size key="titleShadowOffset" width="1" height="1"/>
+                    <state key="normal" title="8">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="sentNumberAction:" destination="-1" eventType="touchUpInside" id="o5W-Lx-bjh"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Vnl-fs-GRC" customClass="SVButton">
+                    <rect key="frame" x="107" y="383" width="70" height="70"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                    <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <size key="titleShadowOffset" width="1" height="1"/>
+                    <state key="normal" title="5">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="sentNumberAction:" destination="-1" eventType="touchUpInside" id="cS1-WB-nLD"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="AwS-cp-4Xd" customClass="SVButton">
+                    <rect key="frame" x="107" y="481" width="70" height="70"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                    <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <size key="titleShadowOffset" width="1" height="1"/>
+                    <state key="normal" title="2">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="sentNumberAction:" destination="-1" eventType="touchUpInside" id="0fD-MH-mv9"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5wv-7f-mF5" customClass="SVButton">
+                    <rect key="frame" x="198" y="283" width="70" height="70"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                    <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <size key="titleShadowOffset" width="1" height="1"/>
+                    <state key="normal" title="9">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="sentNumberAction:" destination="-1" eventType="touchUpInside" id="mBR-2C-8pI"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="boz-s0-Mcc" customClass="SVButton">
+                    <rect key="frame" x="197" y="383" width="70" height="70"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                    <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <size key="titleShadowOffset" width="1" height="1"/>
+                    <state key="normal" title="6">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="sentNumberAction:" destination="-1" eventType="touchUpInside" id="moS-bF-bSV"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WSY-yW-Uka" customClass="SVButton">
+                    <rect key="frame" x="198" y="481" width="70" height="70"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                    <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <size key="titleShadowOffset" width="1" height="1"/>
+                    <state key="normal" title="3">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="sentNumberAction:" destination="-1" eventType="touchUpInside" id="tsp-P3-vgl"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="M6E-v9-nyX" customClass="SVButton">
+                    <rect key="frame" x="198" y="580" width="70" height="70"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                    <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <size key="titleShadowOffset" width="1" height="1"/>
+                    <state key="normal" title=".">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="sentNumberAction:" destination="-1" eventType="touchUpInside" id="J2f-NB-h2B"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="15" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="JkN-1Q-Mjd" customClass="SVButton">
+                    <rect key="frame" x="289" y="281" width="70" height="70"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                    <color key="backgroundColor" red="1" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <size key="titleShadowOffset" width="1" height="1"/>
+                    <state key="normal" title="x">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="calcAction:" destination="-1" eventType="touchUpInside" id="0kO-yz-DjR"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="16" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="IZ0-uw-57c" customClass="SVButton">
+                    <rect key="frame" x="289" y="381" width="70" height="70"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                    <color key="backgroundColor" red="1" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <size key="titleShadowOffset" width="1" height="1"/>
+                    <state key="normal" title="-">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="calcAction:" destination="-1" eventType="touchUpInside" id="apG-js-hyq"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="17" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2hd-db-2wU" customClass="SVButton">
+                    <rect key="frame" x="289" y="479" width="70" height="70"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                    <color key="backgroundColor" red="1" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <size key="titleShadowOffset" width="1" height="1"/>
+                    <state key="normal" title="+">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="calcAction:" destination="-1" eventType="touchUpInside" id="FGl-2a-J6V"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="18" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="wLa-1t-swc" customClass="SVButton">
+                    <rect key="frame" x="289" y="578" width="70" height="70"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                    <color key="backgroundColor" red="1" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <size key="titleShadowOffset" width="1" height="1"/>
+                    <state key="normal" title="=">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="calcAction:" destination="-1" eventType="touchUpInside" id="1Oj-7G-zN6"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="OjO-EL-mV3" customClass="SVButton">
+                    <rect key="frame" x="16" y="577" width="140" height="70"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                    <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <size key="titleShadowOffset" width="1" height="1"/>
+                    <state key="normal" title="0">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="sentNumberAction:" destination="-1" eventType="touchUpInside" id="0nd-E6-YPx"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+            <point key="canvasLocation" x="-21.5" y="82.5"/>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

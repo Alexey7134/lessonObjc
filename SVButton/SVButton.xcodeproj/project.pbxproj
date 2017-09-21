@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7788AC191F7305000005D86C /* SVButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7788AC181F7305000005D86C /* SVButton.m */; };
+		77EC9ED21F725FAB00476512 /* SVCalculatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77EC9ED11F725FAB00476512 /* SVCalculatorView.m */; };
 		77F253171F71864300BE15B9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F253161F71864300BE15B9 /* main.m */; };
 		77F2531A1F71864300BE15B9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F253191F71864300BE15B9 /* AppDelegate.m */; };
 		77F253221F71864300BE15B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77F253211F71864300BE15B9 /* Assets.xcassets */; };
@@ -35,6 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7788AC171F7305000005D86C /* SVButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVButton.h; sourceTree = "<group>"; };
+		7788AC181F7305000005D86C /* SVButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVButton.m; sourceTree = "<group>"; };
+		77EC9ED01F725FAB00476512 /* SVCalculatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVCalculatorView.h; sourceTree = "<group>"; };
+		77EC9ED11F725FAB00476512 /* SVCalculatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVCalculatorView.m; sourceTree = "<group>"; };
 		77F253121F71864300BE15B9 /* SVButton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SVButton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77F253161F71864300BE15B9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		77F253181F71864300BE15B9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -102,9 +108,13 @@
 		77F253141F71864300BE15B9 /* SVButton */ = {
 			isa = PBXGroup;
 			children = (
+				77EC9ED01F725FAB00476512 /* SVCalculatorView.h */,
+				77EC9ED11F725FAB00476512 /* SVCalculatorView.m */,
 				77F253531F718CD300BE15B9 /* SVMainViewController.h */,
 				77F253541F718CD300BE15B9 /* SVMainViewController.m */,
 				77F2534E1F71899E00BE15B9 /* SVMainView.xib */,
+				7788AC171F7305000005D86C /* SVButton.h */,
+				7788AC181F7305000005D86C /* SVButton.m */,
 				77F253181F71864300BE15B9 /* AppDelegate.h */,
 				77F253191F71864300BE15B9 /* AppDelegate.m */,
 				77F253211F71864300BE15B9 /* Assets.xcassets */,
@@ -277,8 +287,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				77F2531A1F71864300BE15B9 /* AppDelegate.m in Sources */,
+				7788AC191F7305000005D86C /* SVButton.m in Sources */,
 				77F253171F71864300BE15B9 /* main.m in Sources */,
 				77F253551F718CD300BE15B9 /* SVMainViewController.m in Sources */,
+				77EC9ED21F725FAB00476512 /* SVCalculatorView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,6 +509,7 @@
 				77F253411F71864300BE15B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		77F253421F71864300BE15B9 /* Build configuration list for PBXNativeTarget "SVButtonTests" */ = {
 			isa = XCConfigurationList;
@@ -505,6 +518,7 @@
 				77F253441F71864300BE15B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		77F253451F71864300BE15B9 /* Build configuration list for PBXNativeTarget "SVButtonUITests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +527,7 @@
 				77F253471F71864300BE15B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
