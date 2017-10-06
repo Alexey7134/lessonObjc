@@ -9,7 +9,11 @@
 #import "SVMainViewController.h"
 #import "SVButton.h"
 
-@interface SVMainViewController ()
+@interface SVMainViewController (){
+    NSArray *_arrayAllButtons;
+}
+
+typedef struct SVButtonsCount SVButtonsCount;
 
 @end
 
@@ -45,15 +49,9 @@
         button.titleLabel.textColor = [UIColor whiteColor];
     }
     
-    NSArray* arrayAllButtons = [[NSArray alloc] initWithArray:self.nubersButtonCollection];
-    arrayAllButtons = [arrayAllButtons arrayByAddingObjectsFromArray:self.calcButtonCollection];
-    arrayAllButtons = [arrayAllButtons arrayByAddingObjectsFromArray:self.settingNumberButtonCollection];
-    
-    for (UIButton* button in arrayAllButtons) {
-        button.layer.cornerRadius = CGRectGetHeight(button.frame)/2;
-        //button.layer.borderColor
-        //button.layer.borderWidth
-    }
+    _arrayAllButtons = [[NSArray alloc] initWithArray:self.nubersButtonCollection];
+    _arrayAllButtons = [_arrayAllButtons arrayByAddingObjectsFromArray:self.calcButtonCollection];
+    _arrayAllButtons = [_arrayAllButtons arrayByAddingObjectsFromArray:self.settingNumberButtonCollection];
 }
 
 -(void)setButtonColorWithStates:(SVButton *)button backGroundColor:(UIColor *)color{
@@ -64,6 +62,8 @@
     button.highlighted = NO;
 }
 
+#pragma mark - Help functions -
+
 -(UIColor *)makeColorLighter:(UIColor *)color{
     
     CGFloat hue = 0.0, saturation = 0.0, brightness = 0.0, alpha =0.0;
@@ -73,16 +73,35 @@
     brightness = (brightness + 0.2) > 1 ? brightness : brightness + 0.2;
     
     color = [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:alpha];
-    
     return color;
 }
 
-- (IBAction)sentNumberAction:(UIButton *)sender {
+#pragma mark - SVButton action
+
+- (IBAction)sentNumberAction:(SVButton *)sender {
     self.screenLabel.text = [NSString stringWithFormat:@"%ld",sender.tag];
 }
-- (IBAction)calcAction:(UIButton *)sender {
+- (IBAction)calcAction:(SVButton *)sender {
+    
 }
-- (IBAction)settingNumberAction:(UIButton *)sender {
+- (IBAction)settingNumberAction:(SVButton *)sender {
+    
 }
 
+#pragma mark - Orientation
+
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id)coordinator {
+    
+    // before rotation
+    
+    [coordinator animateAlongsideTransition:^(id  _Nonnull context) {
+        
+    } completion:^(id  _Nonnull context) {
+        
+        for (SVButton *button in _arrayAllButtons) {
+            [button buttonCornerRadius];
+        }
+        
+    }];
+}
 @end

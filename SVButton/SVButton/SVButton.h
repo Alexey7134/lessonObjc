@@ -11,5 +11,6 @@
 @interface SVButton : UIButton
 
 -(void)setBackgroundColor:(UIColor *)backgroundColor forState:(UIControlState)state;
+-(void)buttonCornerRadius;
 
 @end

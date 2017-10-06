@@ -12,8 +12,7 @@
 
 -(instancetype)initWithCoder:(NSCoder *)aDecoder{
     if ([super initWithCoder:aDecoder]) {
-        self.clipsToBounds = YES;
-        self.layer.cornerRadius = CGRectGetHeight(self.frame)/2;
+        [self buttonCornerRadius];
     }
     return self;
 }
@@ -29,6 +28,11 @@
     
     [self setBackgroundImage:image forState:state];
     [self setHighlighted:YES];
+}
+
+-(void)buttonCornerRadius{
+    self.clipsToBounds = YES;
+    self.layer.cornerRadius = CGRectGetHeight(self.frame)/2;
 }
 
 
