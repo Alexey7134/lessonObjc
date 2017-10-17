@@ -58,6 +58,7 @@
          forControlEvents:UIControlEventTouchUpInside];
         [button setTitle:[arrayString objectAtIndex:countString++] forState:UIControlStateNormal];
         [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        button.titleLabel.font = [button.titleLabel.font fontWithSize:25];
         button.backgroundColor = colorBackground;
         button.tag = indexButton;
         self.arraySettingsButtons = [self.arraySettingsButtons arrayByAddingObject:button];
@@ -76,6 +77,7 @@
          forControlEvents:UIControlEventTouchUpInside];
         [button setTitle:[arrayString objectAtIndex:countString++]  forState:UIControlStateNormal];
         [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        button.titleLabel.font = [button.titleLabel.font fontWithSize:25];
         button.backgroundColor = colorBackground;
         button.tag = indexButton;
         self.arrayCalcButtons = [self.arrayCalcButtons arrayByAddingObject:button];
@@ -94,6 +96,7 @@
         NSString *title = indexButton == 10 ? @"." : [NSString stringWithFormat:@"%li", indexButton];
         [button setTitle:title forState:UIControlStateNormal];
         [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        button.titleLabel.font = [button.titleLabel.font fontWithSize:25];
         button.backgroundColor = colorBackground;
         if (indexButton>ButtonTagNumNine) {
             button.tag = indexButton + 8;

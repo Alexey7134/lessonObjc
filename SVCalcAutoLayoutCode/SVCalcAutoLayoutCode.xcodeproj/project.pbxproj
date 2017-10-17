@@ -14,6 +14,7 @@
 		77E76F7E1F8CE4BA00908CC7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E76F7D1F8CE4BA00908CC7 /* main.m */; };
 		77E76F851F8CE4D900908CC7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77E76F841F8CE4D900908CC7 /* Default-568h@2x.png */; };
 		77E76F881F8CE50600908CC7 /* SVMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E76F871F8CE50600908CC7 /* SVMainViewController.m */; };
+		77EA6EBE1F95DF2200F411D5 /* SVLogicCalc.m in Sources */ = {isa = PBXBuildFile; fileRef = 77EA6EBD1F95DF2200F411D5 /* SVLogicCalc.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,8 @@
 		77E76F841F8CE4D900908CC7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		77E76F861F8CE50600908CC7 /* SVMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SVMainViewController.h; sourceTree = "<group>"; };
 		77E76F871F8CE50600908CC7 /* SVMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVMainViewController.m; sourceTree = "<group>"; };
+		77EA6EBC1F95DF2200F411D5 /* SVLogicCalc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SVLogicCalc.h; sourceTree = "<group>"; };
+		77EA6EBD1F95DF2200F411D5 /* SVLogicCalc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVLogicCalc.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +78,7 @@
 		77E76F6D1F8CE4BA00908CC7 /* SVCalcAutoLayoutCode */ = {
 			isa = PBXGroup;
 			children = (
+				77EA6EBB1F95DEEF00F411D5 /* model */,
 				773932A21F92945700B271C9 /* view */,
 				77E76F6E1F8CE4BA00908CC7 /* AppDelegate.h */,
 				77E76F6F1F8CE4BA00908CC7 /* AppDelegate.m */,
@@ -85,6 +89,15 @@
 				77E76F7D1F8CE4BA00908CC7 /* main.m */,
 			);
 			path = SVCalcAutoLayoutCode;
+			sourceTree = "<group>";
+		};
+		77EA6EBB1F95DEEF00F411D5 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				77EA6EBC1F95DF2200F411D5 /* SVLogicCalc.h */,
+				77EA6EBD1F95DF2200F411D5 /* SVLogicCalc.m */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +174,7 @@
 				773932AC1F92B08200B271C9 /* SVButton.m in Sources */,
 				773932A81F92A30500B271C9 /* SVButtonsView.m in Sources */,
 				77E76F701F8CE4BA00908CC7 /* AppDelegate.m in Sources */,
+				77EA6EBE1F95DF2200F411D5 /* SVLogicCalc.m in Sources */,
 				77E76F881F8CE50600908CC7 /* SVMainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

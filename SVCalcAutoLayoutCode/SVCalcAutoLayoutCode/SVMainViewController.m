@@ -8,41 +8,48 @@
 
 #import "SVMainViewController.h"
 #import "SVButton.h"
+#import "SVLogicCalc.h"
 
 @interface SVMainViewController ()
 
-@property (strong, nonatomic)NSArray *arrayAllButtons;
-@property (strong, nonatomic)NSArray *arrayNumberButtons;
-@property (strong, nonatomic)NSArray *arrayCalcButtons;
-@property (strong, nonatomic)NSArray *arraySettingsButtons;
-@property (strong, nonatomic)NSDictionary *dictionaryButtons;
-
 @property(strong,nonatomic)SVButtonsView *viewButtons;
+@property(strong,nonatomic)UILabel *labelScreen;
+@property(strong,nonatomic)SVLogicCalc *logicCalc;
 
 @end
 
 @implementation SVMainViewController
 
-/*
- [  AC ] [ +/- ] [  %  ] [  /  ]
- [  7  ] [  8  ] [  9  ] [  *  ]
- [  4  ] [  5  ] [  6  ] [  +  ]
- [  1  ] [  2  ] [  3  ] [  -  ]
- [  0       ]    [  .  ] [  =  ]
- */
-
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor blackColor];
     
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.logicCalc = [[SVLogicCalc alloc] init];
+    self.logicCalc.delegate = self;
+    
+    CGRect rectLabel = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 100);
+    CGRect rectWithInsets = UIEdgeInsetsInsetRect(rectLabel, UIEdgeInsetsMake(0, 10, 0, 10));
+    self.labelScreen = [[UILabel alloc] initWithFrame:rectWithInsets];
+    self.labelScreen.backgroundColor = [UIColor blackColor];
+    self.labelScreen.textColor = [UIColor whiteColor];
+    self.labelScreen.textAlignment = NSTextAlignmentRight;
+    self.labelScreen.font = [self.labelScreen.font fontWithSize:50];
+    [self.view addSubview:self.labelScreen];
+    
+    [self.logicCalc chooseFuncTag:ButtonTagSettingsAC];
+    
     self.viewButtons = [[SVButtonsView alloc] initWithFrame:CGRectMake(0, 100, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - 100)];
     [self.view addSubview:self.viewButtons ];
-    self.viewButtons .delegate = self;
+    self.viewButtons.delegate = self;
+}
+
+-(void)setLabelDisplayText:(NSString *)str{
+    self.labelScreen.text = str;
 }
 
 #pragma mark - SVButton action
 - (void)buttonAction:(SVButton *)button {
-    NSLog(@"current button tag %@", [NSString stringWithFormat:@"%li", button.tag]);
+    [self.logicCalc chooseFuncTag:button.tag];
 }
 
 @end

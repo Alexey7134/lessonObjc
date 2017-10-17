@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SVButtonsView.h"
+#import "SVLogicCalc.h"
 
-@interface SVMainViewController : UIViewController <SVButtonsViewDelegate>
-
+@interface SVMainViewController : UIViewController <SVButtonsViewDelegate,SVLogicCalcDelegate>
 @end
