@@ -30,4 +30,9 @@
     [self setHighlighted:YES];
 }
 
+-(void)layoutSubviews{
+    [super layoutSubviews];
+    self.layer.cornerRadius = CGRectGetHeight(self.bounds)/2;
+}
+
 @end

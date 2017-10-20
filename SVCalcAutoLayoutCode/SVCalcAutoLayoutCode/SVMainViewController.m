@@ -41,7 +41,38 @@
     self.viewButtons = [[SVButtonsView alloc] initWithFrame:CGRectMake(0, 100, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - 100)];
     [self.view addSubview:self.viewButtons ];
     self.viewButtons.delegate = self;
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0) {
+        [self makeAutoLayoutWithAnchors];
+    }else{
+        [self makeAutoLAyoutWithConstrains];
+    }
+    
 }
+
+-(void)makeAutoLayoutWithAnchors{
+    self.view.translatesAutoresizingMaskIntoConstraints = NO;
+    self.labelScreen.translatesAutoresizingMaskIntoConstraints = NO;
+    self.viewButtons.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    UILayoutGuide *margineGuide = self.view.layoutMarginsGuide;
+    [self.labelScreen.leadingAnchor constraintEqualToAnchor:margineGuide.leadingAnchor].active = YES;
+    [self.labelScreen.trailingAnchor constraintEqualToAnchor:margineGuide.trailingAnchor].active = YES;
+    [self.labelScreen.topAnchor constraintEqualToAnchor:margineGuide.topAnchor].active = YES;
+    [self.labelScreen.bottomAnchor constraintEqualToAnchor:self.viewButtons.topAnchor].active = YES;
+    
+    [self.viewButtons.leadingAnchor constraintEqualToAnchor:margineGuide.leadingAnchor].active = YES;
+    [self.viewButtons.trailingAnchor constraintEqualToAnchor:margineGuide.trailingAnchor].active = YES;
+    [self.viewButtons.bottomAnchor constraintEqualToAnchor:margineGuide.bottomAnchor constant:-20].active = YES;
+    [self.viewButtons.heightAnchor constraintEqualToConstant:CGRectGetWidth(self.view.frame)+40].active = YES;
+}
+
+-(void)makeAutoLAyoutWithConstrains{
+    
+}
+
 
 -(void)setLabelDisplayText:(NSString *)str{
     self.labelScreen.text = str;

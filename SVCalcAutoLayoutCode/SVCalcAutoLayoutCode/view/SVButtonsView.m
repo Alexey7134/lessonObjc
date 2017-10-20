@@ -38,7 +38,13 @@
         
         self.backgroundColor = [UIColor blackColor];
         
-        [self startButtonFrameRectOnField:self.arrayButtonsField withButtonsDictionary:self.dictionaryButtons];
+        if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0) {
+            [self makeAutoLayoutWithAnchor:self.arrayButtonsField withButtonsDictionary:self.dictionaryButtons];
+        }else{
+            // calculate frame rects
+            [self startButtonFrameRectOnField:self.arrayButtonsField withButtonsDictionary:self.dictionaryButtons];
+        }
+        
     }
     return self;
 }
@@ -140,6 +146,8 @@
     return dictionary;
 }
 
+#pragma mark - Frame Rects
+
 -(void)startButtonFrameRectOnField:(NSArray *)arrayField withButtonsDictionary:(NSDictionary *)dictionary{
     for (NSInteger indexLine = 0; indexLine < [arrayField count]; indexLine++) {
         NSArray *arrayColumn = [arrayField objectAtIndex:indexLine];
@@ -176,7 +184,63 @@
     }
 }
 
+#pragma mark - AutoLayout
 
+-(void)makeAutoLayoutWithAnchor:(NSArray *)arrayField withButtonsDictionary:(NSDictionary *)dictionary{
+    self.backgroundColor = [UIColor grayColor];
+    NSMutableArray *arrayLineViews = [[NSMutableArray alloc] init];
+    for (NSInteger indexLine = 0; indexLine < [arrayField count]; indexLine++) {
+        NSArray *arrayColumn = [arrayField objectAtIndex:indexLine];
+        UIView *viewButtonsLine = [[UIView alloc] initWithFrame:CGRectMake(20, 20, 20, 20)];
+        viewButtonsLine.backgroundColor = [UIColor brownColor];
+        [arrayLineViews addObject:viewButtonsLine];
+        [self addSubview:viewButtonsLine];
+        
+        self.translatesAutoresizingMaskIntoConstraints = NO;
+        viewButtonsLine.translatesAutoresizingMaskIntoConstraints = NO;
+        
+        [viewButtonsLine.leadingAnchor constraintEqualToAnchor:self.leadingAnchor].active = YES;
+        [viewButtonsLine.trailingAnchor constraintEqualToAnchor:self.trailingAnchor].active = YES;
+        
+        if (indexLine == 0) {
+            [viewButtonsLine.topAnchor constraintEqualToAnchor:self.topAnchor].active = YES;
+        }else{
+            UIView *preViewLine = [arrayLineViews objectAtIndex:indexLine - 1];
+            [viewButtonsLine.topAnchor constraintEqualToAnchor:preViewLine.bottomAnchor constant:20].active = YES;
+            [viewButtonsLine.heightAnchor constraintEqualToAnchor:preViewLine.heightAnchor].active = YES;
+        }
+        
+        if (indexLine == [arrayField count] - 1) {
+            [viewButtonsLine.bottomAnchor constraintEqualToAnchor:self.bottomAnchor].active = YES;
+        }
+        
+        for (NSInteger indexColumn = 0; indexColumn < [arrayColumn count]; indexColumn++) {
+            NSInteger number = [(NSNumber*)[arrayColumn objectAtIndex:indexColumn] intValue] ;
+            SVButton *button = [dictionary objectForKey:[NSString stringWithFormat:@"%li", number]];
+            button.translatesAutoresizingMaskIntoConstraints =  NO;
+            [viewButtonsLine addSubview:button];
+            
+            [button.topAnchor constraintEqualToAnchor:viewButtonsLine.topAnchor].active = YES;
+            [button.bottomAnchor constraintEqualToAnchor:viewButtonsLine.bottomAnchor].active = YES;
+            if (indexColumn == 0) {
+                [button.leadingAnchor constraintEqualToAnchor:viewButtonsLine.leadingAnchor].active = YES;
+            }else{
+                NSInteger previousNumber = [(NSNumber *) [arrayColumn objectAtIndex:indexColumn - 1] integerValue];
+                SVButton *previousButton = [dictionary objectForKey:[NSString stringWithFormat:@"%li", previousNumber]];
+                [button.leadingAnchor constraintEqualToAnchor:previousButton.trailingAnchor constant:20].active = YES;
+                if (indexLine != [arrayField count] - 1) {
+                    [button.widthAnchor constraintEqualToAnchor:previousButton.heightAnchor].active = YES;
+                }else{
+                    [button.widthAnchor constraintEqualToAnchor:button.heightAnchor].active = YES;
+                }
+            }
+            
+            if (indexColumn == [arrayColumn count] - 1) {
+                [button.trailingAnchor constraintEqualToAnchor:viewButtonsLine.trailingAnchor].active = YES;
+            }
+        }
+    }
+}
 
 #pragma mark - Help functions -
 
