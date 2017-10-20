@@ -42,7 +42,7 @@
     [self.view addSubview:self.viewButtons ];
     self.viewButtons.delegate = self;
     
-    self.view.backgroundColor = [UIColor whiteColor];
+    //self.view.backgroundColor = [UIColor whiteColor];
     
     
     self.view.translatesAutoresizingMaskIntoConstraints = NO;
@@ -156,6 +156,17 @@
 
 -(void)setLabelDisplayText:(NSString *)str{
     self.labelScreen.text = str;
+}
+
+#pragma mark -Orientation
+- (BOOL) shouldAutorotate
+{
+    return NO;
+}
+
+- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+    return NO;
 }
 
 #pragma mark - SVButton action

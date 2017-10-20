@@ -175,11 +175,6 @@
                                         widthButton,
                                         heightButton)];
             
-            
-            
-            [self setButtonColorWithStates:button];
-            button.layer.cornerRadius = button.frame.size.height/2;
-            [button.layer setMasksToBounds:YES];
         }
     }
 }
@@ -187,12 +182,12 @@
 #pragma mark - AutoLayout
 
 -(void)makeAutoLayoutWithAnchor:(NSArray *)arrayField withButtonsDictionary:(NSDictionary *)dictionary{
-    self.backgroundColor = [UIColor grayColor];
+    //self.backgroundColor = [UIColor grayColor];
     NSMutableArray *arrayLineViews = [[NSMutableArray alloc] init];
     for (NSInteger indexLine = 0; indexLine < [arrayField count]; indexLine++) {
         NSArray *arrayColumn = [arrayField objectAtIndex:indexLine];
         UIView *viewButtonsLine = [[UIView alloc] initWithFrame:CGRectMake(20, 20, 20, 20)];
-        viewButtonsLine.backgroundColor = [UIColor brownColor];
+        //viewButtonsLine.backgroundColor = [UIColor brownColor];
         [arrayLineViews addObject:viewButtonsLine];
         [self addSubview:viewButtonsLine];
         
@@ -241,30 +236,6 @@
         }
     }
 }
-
-#pragma mark - Help functions -
-
--(UIColor *)makeColorLighter:(UIColor *)color{
-    
-    CGFloat hue = 0.0, saturation = 0.0, brightness = 0.0, alpha =0.0;
-    [color getHue:&hue saturation:&saturation brightness:&brightness alpha:&alpha];
-    
-    saturation = (saturation - 0.2) < 0 ? 0 : saturation - 0.2;
-    brightness = (brightness + 0.2) > 1 ? brightness : brightness + 0.2;
-    
-    color = [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:alpha];
-    return color;
-}
-
--(void)setButtonColorWithStates:(SVButton *)button{
-    //button.backgroundColor = color;
-    [button setBackgroundColor:button.backgroundColor forState:UIControlStateNormal];
-    [button setBackgroundColor:[self makeColorLighter:button.backgroundColor] forState:UIControlStateHighlighted];
-    [button setBackgroundColor:[self makeColorLighter:button.backgroundColor] forState:UIControlStateSelected];
-    button.adjustsImageWhenHighlighted = NO;
-    button.highlighted = NO;
-}
-
 
 #pragma mark - SVButton action
 - (void)settingNumberAction:(SVButton *)button {
