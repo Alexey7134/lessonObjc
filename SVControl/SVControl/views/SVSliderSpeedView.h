@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol SVSliderSpeedViewDelegate;
+
 @interface SVSliderSpeedView : UIView
 
+@property(strong, nonatomic)id<SVSliderSpeedViewDelegate> delegate;
+@property(strong, nonatomic)UISlider *sliderView;
+@property(strong, nonatomic)UILabel *label;
+
+@end
+
+@protocol SVSliderSpeedViewDelegate <NSObject>
+-(void)actionSliderChanged:(UISlider *)sender;
 @end

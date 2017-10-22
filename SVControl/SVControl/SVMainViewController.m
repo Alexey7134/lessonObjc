@@ -36,118 +36,67 @@ const NSInteger SVRectDefault = 20;
     
     self.settingsView  = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SVRectDefault, SVRectDefault)];
     [self.settingsView  setBackgroundColor:[UIColor brownColor]];
+    [self.view addSubview:self.settingsView];
     
     self.changeView  = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SVRectDefault, SVRectDefault)];
     [self.changeView  setBackgroundColor:[UIColor redColor]];
+    [self.view addSubview:self.changeView];
     
+    //Create slider View
+    self.sliderView = [[SVSliderSpeedView alloc] initWithFrame:CGRectMake(0, 0, SVRectDefault, SVRectDefault)];
+    [self.settingsView addSubview:self.sliderView];
+    
+    //Create switches View
     self.rotationSwitchView = [[SVSwitchAnimationView alloc] initWithFrame:CGRectMake(0, 0, SVRectDefault, SVRectDefault)];
     self.rotationSwitchView.delegate = self;
+    self.rotationSwitchView.label.text = @"Enable rotation";
+    [self.settingsView addSubview:self.rotationSwitchView];
     self.scaleSwitchView = [[SVSwitchAnimationView alloc] initWithFrame:CGRectMake(0, 0, SVRectDefault, SVRectDefault)];
     self.scaleSwitchView.delegate = self;
+    self.scaleSwitchView.label.text = @"Enable scale";
+    [self.settingsView addSubview:self.scaleSwitchView];
     self.translationSwitchView = [[SVSwitchAnimationView alloc] initWithFrame:CGRectMake(0, 0, SVRectDefault, SVRectDefault)];
     self.translationSwitchView.delegate = self;
-    
-    self.sliderView = [[SVSliderSpeedView alloc] initWithFrame:CGRectMake(0, 0, SVRectDefault, SVRectDefault)];
-    
-    
-    
-    
-    
-    
-    
-//    changedView.layer.borderColor = [UIColor grayColor].CGColor;
-//    changedView.layer.borderWidth = 1.f;
-    
-//     UIView *changeView = [[UIView alloc] initWithFrame:CGRectMake(40, 0, 100, 100)];
-//    [changeView setBackgroundColor:[UIColor orangeColor]];
-//    [self.view addSubview:changeView];
-//    [dictionary setObject:changeView forKey:@"changeView"];
-//
-//    UIView *settingsView = [[UIView alloc] initWithFrame:CGRectMake(40, 200, 100, 100)];
-//    [settingsView setBackgroundColor:[UIColor brownColor]];
-//    [self.view addSubview:settingsView];
-//    [dictionary setObject:settingsView forKey:@"settingsView"];
-//
-//    UIView *switchesView = [[UIView alloc] initWithFrame:CGRectMake(40, 300, 100, 100)];
-//    [switchesView setBackgroundColor:[UIColor blueColor]];
-//    [settingsView addSubview:switchesView];
-//    [dictionary setObject:switchesView forKey:@"switchesView"];
-//
-//    self.viewsDictionary = dictionary;
-//
-//    [self createSwitches:switchesView];
-//    [self createSlider:settingsView];
+    self.translationSwitchView.label.text = @"Enable translation";
+    [self.settingsView addSubview:self.translationSwitchView];
     
     [self disableMask:self.view];
     [self makeLayout];
 }
-//-(void)createSlider:(UIView *)parentView{
-//    self.speedSlider = [[UISlider alloc] initWithFrame:CGRectMake(40, 300, 250, 50)];
-//    [self.speedSlider addTarget:self action:@selector(actionSliderSpeedChanged:) forControlEvents:UIControlEventValueChanged];
-//    self.speedSlider.minimumValue = 0.5f;
-//    self.speedSlider.maximumValue = 2.f;
-//    self.speedSlider.value = 1.f;
-//    [parentView addSubview:self.speedSlider];
-//}
-
-//-(void)createSwitches:(UIView *)parentView{
-//    self.rotationSwitch = [[UISwitch alloc]  initWithFrame:CGRectZero];
-//    [self.rotationSwitch addTarget:self action:@selector(actionSwitchChanged:) forControlEvents:UIControlEventValueChanged];
-//    [parentView addSubview:self.rotationSwitch];
-//
-//    self.scaleSwitch = [[UISwitch alloc]  initWithFrame:CGRectZero];
-//    [self.scaleSwitch addTarget:self action:@selector(actionSwitchChanged:) forControlEvents:UIControlEventValueChanged];
-//    [parentView addSubview:self.scaleSwitch];
-//
-//    self.translationSwitch = [[UISwitch alloc]  initWithFrame:CGRectZero];
-//    [self.translationSwitch addTarget:self action:@selector(actionSwitchChanged:) forControlEvents:UIControlEventValueChanged];
-//    [parentView addSubview:self.translationSwitch];
-//}
 
 #pragma mark - Layout
 
 -(void)makeLayout{
     UILayoutGuide *margin = self.view.layoutMarginsGuide;
-    
-    //UIView *settingsView = [self.viewsSetter valueForKey:@"settingsView"];
-//    UIView *settingsView = [self ]
-//    [settingsView.topAnchor constraintEqualToAnchor:margin.topAnchor constant:CGRectGetHeight(margin.layoutFrame)/2].active = YES;
-//    [settingsView.leadingAnchor constraintEqualToAnchor:margin.leadingAnchor].active = YES;
-//    [settingsView.trailingAnchor constraintEqualToAnchor:margin.trailingAnchor].active = YES;
-//    [settingsView.bottomAnchor constraintEqualToAnchor:margin.bottomAnchor].active = YES;
-    
-    //layout in settingsView
-//    UIView *switchesView = [self.viewsSetter valueForKey:@"switchesView"];
-//    [switchesView.topAnchor constraintGreaterThanOrEqualToAnchor:settingsView.topAnchor constant:0].active = YES;
-//    [switchesView.leadingAnchor constraintEqualToAnchor:settingsView.leadingAnchor].active = YES;
-//    [switchesView.trailingAnchor constraintEqualToAnchor:settingsView.trailingAnchor].active = YES;
-//    [switchesView.bottomAnchor constraintEqualToAnchor:self.speedSlider.topAnchor constant:-20].active = YES;
-//    [switchesView.heightAnchor constraintEqualToConstant:CGRectGetHeight(self.rotationSwitch.frame)].active = YES;
-   
-    
 
-   // [self.speedSlider.topAnchor constraintEqualToAnchor:self.switchesView.bottomAnchor constant:40].active = YES;
-//    [self.speedSlider.leadingAnchor constraintEqualToAnchor:settingsView.leadingAnchor].active = YES;
-//    [self.speedSlider.trailingAnchor constraintEqualToAnchor:settingsView.trailingAnchor].active = YES;
-//    [self.speedSlider.bottomAnchor constraintEqualToAnchor:settingsView.bottomAnchor constant:-40].active = YES;
+    [self.settingsView.topAnchor constraintEqualToAnchor:margin.topAnchor constant:CGRectGetHeight(margin.layoutFrame)/2].active = YES;
+    [self.settingsView.bottomAnchor constraintEqualToAnchor:margin.bottomAnchor].active = YES;
+    [self.settingsView.leadingAnchor constraintEqualToAnchor:margin.leadingAnchor].active = YES;
+    [self.settingsView.trailingAnchor constraintEqualToAnchor:margin.trailingAnchor].active = YES;
     
-//    //layout in switchesView
-//    [self.rotationSwitch.leadingAnchor constraintEqualToAnchor:switchesView.leadingAnchor].active = YES;
-//    [self.rotationSwitch.topAnchor constraintEqualToAnchor:switchesView.topAnchor].active = YES;
-//    [self.rotationSwitch.bottomAnchor constraintEqualToAnchor:switchesView.bottomAnchor].active = YES;
-//    [self.rotationSwitch.trailingAnchor constraintGreaterThanOrEqualToAnchor:self.scaleSwitch.leadingAnchor].active = YES;
-//
-//
-//   // [self.scaleSwitch.leadingAnchor constraintEqualToAnchor:self.switchesView.leadingAnchor].active = YES;
-//    [self.scaleSwitch.topAnchor constraintEqualToAnchor:switchesView.topAnchor].active = YES;
-//    [self.scaleSwitch.centerXAnchor constraintEqualToAnchor:switchesView.centerXAnchor].active = YES;
-//    [self.scaleSwitch.bottomAnchor constraintEqualToAnchor:switchesView.bottomAnchor].active = YES;
-//
-//    [self.translationSwitch.leadingAnchor constraintGreaterThanOrEqualToAnchor:self.scaleSwitch.trailingAnchor].active = YES;
-//    [self.translationSwitch.trailingAnchor constraintEqualToAnchor:switchesView.trailingAnchor].active = YES;
-//    [self.translationSwitch.topAnchor constraintEqualToAnchor:switchesView.topAnchor].active = YES;
-//    [self.translationSwitch.bottomAnchor constraintEqualToAnchor:switchesView.bottomAnchor].active = YES;
+    //add slider layout
+    self.sliderView.backgroundColor = [UIColor yellowColor];
+    [self.sliderView.topAnchor constraintEqualToAnchor:self.settingsView.topAnchor].active = YES;
+    [self.sliderView.leadingAnchor constraintEqualToAnchor:self.settingsView.leadingAnchor].active = YES;
+    [self.sliderView.trailingAnchor constraintEqualToAnchor:self.settingsView.trailingAnchor].active = YES;
     
+    //add switche rotation
+    self.rotationSwitchView.backgroundColor = [UIColor lightGrayColor];
+    [self.rotationSwitchView.topAnchor constraintEqualToAnchor:self.sliderView.bottomAnchor].active = YES;
+    [self.rotationSwitchView.leadingAnchor constraintEqualToAnchor:self.settingsView.leadingAnchor].active = YES;
+    [self.rotationSwitchView.trailingAnchor constraintEqualToAnchor:self.settingsView.trailingAnchor].active = YES;
+    
+    //add switche rotation
+    self.scaleSwitchView.backgroundColor = [UIColor lightGrayColor];
+    [self.scaleSwitchView.topAnchor constraintEqualToAnchor:self.rotationSwitchView.bottomAnchor].active = YES;
+    [self.scaleSwitchView.leadingAnchor constraintEqualToAnchor:self.settingsView.leadingAnchor].active = YES;
+    [self.scaleSwitchView.trailingAnchor constraintEqualToAnchor:self.settingsView.trailingAnchor].active = YES;
+    
+    //add switche rotation
+    self.translationSwitchView.backgroundColor = [UIColor lightGrayColor];
+    [self.translationSwitchView.topAnchor constraintEqualToAnchor:self.scaleSwitchView.bottomAnchor].active = YES;
+    [self.translationSwitchView.leadingAnchor constraintEqualToAnchor:self.settingsView.leadingAnchor].active = YES;
+    [self.translationSwitchView.trailingAnchor constraintEqualToAnchor:self.settingsView.trailingAnchor].active = YES;
 }
 
 #pragma mark - Private functions
