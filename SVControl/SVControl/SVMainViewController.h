@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "SVSwitchAnimationView.h"
+#import "SVSliderSpeedView.h"
 
-@interface SVMainViewController : UIViewController<SVSwitchAnimationViewDelegate>
+@interface SVMainViewController : UIViewController<SVSwitchAnimationViewDelegate, SVSliderSpeedViewDelegate>
 
 @end
