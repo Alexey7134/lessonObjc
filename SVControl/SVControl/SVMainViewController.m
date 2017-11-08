@@ -53,16 +53,19 @@ const NSInteger SVRectDefault = 20;
     self.rotationSwitchView = [[SVSwitchAnimationView alloc] initWithFrame:CGRectMake(0, 0, SVRectDefault, SVRectDefault)];
     self.rotationSwitchView.delegate = self;
     self.rotationSwitchView.label.text = @"Enable rotation";
+    self.rotationSwitchView.tag = 0;
     self.rotationSwitchView.switchView.on = YES;
     [self.settingsView addSubview:self.rotationSwitchView];
     self.scaleSwitchView = [[SVSwitchAnimationView alloc] initWithFrame:CGRectMake(0, 0, SVRectDefault, SVRectDefault)];
     self.scaleSwitchView.delegate = self;
     self.scaleSwitchView.label.text = @"Enable scale";
+    self.rotationSwitchView.tag = 1;
     self.scaleSwitchView.switchView.on = YES;
     [self.settingsView addSubview:self.scaleSwitchView];
     self.translationSwitchView = [[SVSwitchAnimationView alloc] initWithFrame:CGRectMake(0, 0, SVRectDefault, SVRectDefault)];
     self.translationSwitchView.delegate = self;
     self.translationSwitchView.label.text = @"Enable translation";
+    self.rotationSwitchView.tag = 2;
     self.translationSwitchView.switchView.on = YES;
     [self.settingsView addSubview:self.translationSwitchView];
     
@@ -79,7 +82,7 @@ const NSInteger SVRectDefault = 20;
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    [self moveView:self.imageView withRectForMove:_rectForMove speedAnimation:_speed];
+    //[self moveView:self.imageView withRectForMove:_rectForMove speedAnimation:_speed];
     
 }
 
@@ -160,39 +163,75 @@ const NSInteger SVRectDefault = 20;
     CGFloat y = arc4random() % (int)CGRectGetHeight(rect) + CGRectGetMidY(rect);
     //if(self.translationSwitchView.switchView.isOn)
     
-    CGFloat s = (float)(arc4random() % 25) /100.f + 0.5f;
+//    CGFloat s = (float)(arc4random() % 25) /100.f + 0.5f;
+//
+//    CGFloat r = (float)(arc4random() % (int)(M_PI *2 * 10000)) / 10000 - M_PI;
+//
+//    CGFloat d = (float)((arc4random() % 20001) / 10000 + 2) / speed;
     
-    CGFloat r = (float)(arc4random() % (int)(M_PI *2 * 10000)) / 10000 - M_PI;
+    //[self createAnimationRotation:view duration:d rotation:r];
     
-    CGFloat d = (float)((arc4random() % 20001) / 10000 + 2) / speed;
-    
-    
-    [UIView animateWithDuration:d
-                          delay:0
-                        options:UIViewAnimationOptionCurveLinear
-                     animations:^{
-                         
-                         view.center = CGPointMake(x, y);
-                         
-                         CGAffineTransform scale = CGAffineTransformMakeScale(s, s);
-                         CGAffineTransform rotation = CGAffineTransformMakeRotation(r);
-                         
-                         CGAffineTransform transform = CGAffineTransformConcat(scale, rotation);
-                         view.transform = transform;
-                     }
-                     completion:^(BOOL finished) {
-                         NSLog(@"animation finished! %d", finished);
-                         NSLog(@"view frame = %@ \n view boundce = %@", NSStringFromCGRect(view.frame),NSStringFromCGRect(view.bounds));
-                         
-                         __weak UIView* v = view;
-                         [self moveView:v withRectForMove:rectMove speedAnimation:speed];
-                     }];
-    
+//    [UIView animateWithDuration:d
+//                          delay:0
+//                        options:UIViewAnimationOptionCurveLinear
+//                     animations:^{
+//
+//                         view.center = CGPointMake(x, y);
+//
+//                         CGAffineTransform scale = CGAffineTransformMakeScale(s, s);
+//                         CGAffineTransform rotation = CGAffineTransformMakeRotation(r);
+//
+//                         CGAffineTransform transform = CGAffineTransformConcat(scale, rotation);
+//                         view.transform = transform;
+//                     }
+//                     completion:^(BOOL finished) {
+//                         NSLog(@"animation finished! %d", finished);
+//                         NSLog(@"view frame = %@ \n view boundce = %@", NSStringFromCGRect(view.frame),NSStringFromCGRect(view.bounds));
+//
+//                         __weak UIView* v = view;
+//                         [self moveView:v withRectForMove:rectMove speedAnimation:speed];
+//                     }];
+//
     
     
 }
 
+#pragma mark - Random functions
+
+-(CGFloat)randomDurationWithSpeed:(CGFloat)speed{
+    return (float)((arc4random() % 20001) / 10000 + 2) / speed;
+}
+
+-(CGFloat)randomAngle{
+    return (float)(arc4random() % (int)(M_PI *2 * 10000)) / 10000 - M_PI;
+}
+
+-(CGFloat)randomSize{
+    return (float)(arc4random() % 25) /100.f + 0.5f;
+}
+
 #pragma mark - Animations CALayer
+
+-(void)createAnimationMove:(UIView *)viewAnim{
+    
+}
+
+-(void)createAnimationScale:(UIView *)viewAnim{
+    
+}
+
+-(void)createAnimationRotation:(UIView *)viewAnim duration:(CGFloat)duration rotation:(CGFloat)angle{
+    CABasicAnimation *anim = [CABasicAnimation animation];
+    anim.keyPath = @"position.z";
+    anim.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
+    anim.repeatCount = HUGE_VAL;
+    anim.cumulative = YES;
+    anim.duration = duration;
+    anim.fromValue = @(angle);
+    anim.toValue = @(M_PI + angle);
+    [viewAnim.layer addAnimation:anim forKey:@"animViewRotation"];
+}
+
 
 #pragma mark - Actions
 
@@ -202,7 +241,14 @@ const NSInteger SVRectDefault = 20;
 }
 
 -(void)actionSwitchChanged:(UISwitch *)sender{
-    
+    switch (sender.tag) {
+        case 0:
+            [self createAnimationRotation:self.imageView duration:[self randomDurationWithSpeed:_speed] rotation:[self randomAngle]];
+            break;
+            
+        default:
+            break;
+    }
 }
 
 -(void)actionSegmentedControlChanged:(UISegmentedControl *)sender{
