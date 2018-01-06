@@ -44,23 +44,27 @@
     if([[[UIDevice currentDevice] systemVersion] floatValue] <= 9.0){
       [self makeConstraint];
     }else{
-      [self makeConstraintWithAnchor];
+      //[self makeConstraintWithAnchor];
+        [self createConstraintsAnim];
     }
     
 }
 #pragma mark - AutoLayout
 
 -(void)makeConstraintWithAnchor{
-//    [self.view1.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor].active = YES;
-//    [self.view1.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor].active = YES;
-//    [self.view1.topAnchor constraintEqualToAnchor:self.view.topAnchor].active = YES;
-//    [self.view1.bottomAnchor constraintEqualToAnchor:self.view2.topAnchor].active = YES;
-//
-//    [self.view2.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor].active = YES;
-//    [self.view2.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor].active = YES;
-//    [self.view2.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor].active = YES;
-//    //[self.view2.heightAnchor constraintEqualToAnchor:self.view2.widthAnchor].active = YES;
-//    [self.view2.heightAnchor constraintEqualToConstant:100].active = YES;
+    [self.view1.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor].active = YES;
+    [self.view1.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor].active = YES;
+    [self.view1.topAnchor constraintEqualToAnchor:self.view.topAnchor].active = YES;
+    [self.view1.bottomAnchor constraintEqualToAnchor:self.view2.topAnchor].active = YES;
+
+    [self.view2.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor].active = YES;
+    [self.view2.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor].active = YES;
+    [self.view2.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor].active = YES;
+    //[self.view2.heightAnchor constraintEqualToAnchor:self.view2.widthAnchor].active = YES;
+    [self.view2.heightAnchor constraintEqualToConstant:100].active = YES;
+}
+
+-(void)createConstraintsAnim{
     NSMutableArray *verticalConstraintsArray = [NSMutableArray array];
     [verticalConstraintsArray addObject:[self.view1.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor]];
     [verticalConstraintsArray addObject:[self.view1.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor]];
@@ -73,41 +77,33 @@
     [verticalConstraintsArray addObject:[self.view2.heightAnchor constraintEqualToConstant:100]];
     
     [NSLayoutConstraint activateConstraints:verticalConstraintsArray];
-//    [NSLayoutConstraint deactivateConstraints:verticalConstraintsArray];
     
-    NSMutableArray *horizintalConstraintsArray = [NSMutableArray array];
-    [horizintalConstraintsArray addObject:[self.view1.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor]];
-    [horizintalConstraintsArray addObject:[self.view1.trailingAnchor constraintEqualToAnchor:self.view2.leadingAnchor]];
-    [horizintalConstraintsArray addObject:[self.view1.topAnchor constraintEqualToAnchor:self.view.topAnchor]];
-    [horizintalConstraintsArray addObject:[self.view1.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor]];
+    NSMutableArray *horizontalCOnstraintsArray = [NSMutableArray array];
+    [horizontalCOnstraintsArray addObject:[self.view1.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor]];
+    [horizontalCOnstraintsArray addObject:[self.view1.trailingAnchor constraintEqualToAnchor:self.view2.leadingAnchor]];
+    [horizontalCOnstraintsArray addObject:[self.view1.topAnchor constraintEqualToAnchor:self.view.topAnchor]];
+    [horizontalCOnstraintsArray addObject:[self.view1.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor]];
     
-    [horizintalConstraintsArray addObject:[self.view2.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor]];
-    [horizintalConstraintsArray addObject:[self.view2.topAnchor constraintEqualToAnchor:self.view.topAnchor]];
-    [horizintalConstraintsArray addObject:[self.view2.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor]];
-    [horizintalConstraintsArray addObject:[self.view2.widthAnchor constraintEqualToConstant:100]];
-//    [NSLayoutConstraint activateConstraints:horizintalConstraintsArray];
+    [horizontalCOnstraintsArray addObject:[self.view2.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor]];
+    [horizontalCOnstraintsArray addObject:[self.view2.topAnchor constraintEqualToAnchor:self.view.topAnchor]];
+    [horizontalCOnstraintsArray addObject:[self.view2.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor]];
+    [horizontalCOnstraintsArray addObject:[self.view2.widthAnchor constraintEqualToConstant:100]];
     
-    [self animLayoutFirst:verticalConstraintsArray second:horizintalConstraintsArray];
+    [self animLayoutFirst:verticalConstraintsArray second:horizontalCOnstraintsArray];
+    
+    //[NSLayoutConstraint activateConstraints:verticalConstraintsArray];
 }
 
 -(void)animLayoutFirst:(NSArray *)firstArray second:(NSArray *)secondArray{
-    [UIView animateWithDuration:5 animations:^{
-        [NSLayoutConstraint deactivateConstraints:firstArray];
-        [NSLayoutConstraint activateConstraints:secondArray];
-        [self.view layoutIfNeeded];
-    } completion:^(BOOL finished) {
-        [self animLayoutFirst:secondArray second:firstArray];
-    }];
+    [UIView animateWithDuration:5
+                     animations:^{
+                         [NSLayoutConstraint deactivateConstraints:firstArray];
+                         [NSLayoutConstraint activateConstraints:secondArray];
+                         [self.view layoutIfNeeded];
+                     } completion:^(BOOL finished) {
+                         [self animLayoutFirst:secondArray second:firstArray];
+                     }];
 }
-
--(void)createStackView{
-    UIStackView *stackViews = [[UIStackView alloc] initWithArrangedSubviews:@[]];
-    stackViews.axis = UILayoutConstraintAxisVertical;
-    stackViews.distribution = UIStackViewDistributionEqualSpacing;
-    stackViews.alignment = UIStackViewAlignmentCenter;
-    stackViews.spacing = 30;
-}
-
 
 
 -(void)makeConstraintWithVFL{

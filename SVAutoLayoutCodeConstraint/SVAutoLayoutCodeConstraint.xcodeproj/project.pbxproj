@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		779016451FFD91FA008F9B44 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 779016441FFD91FA008F9B44 /* Storyboard.storyboard */; };
 		77A999311FB769A000B7CEC5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A999301FB769A000B7CEC5 /* AppDelegate.m */; };
 		77A999391FB769A000B7CEC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77A999381FB769A000B7CEC5 /* Assets.xcassets */; };
 		77A9993F1FB769A000B7CEC5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A9993E1FB769A000B7CEC5 /* main.m */; };
@@ -16,7 +15,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		779016441FFD91FA008F9B44 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		77A9992C1FB7699F00B7CEC5 /* SVAutoLayoutCodeConstraint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SVAutoLayoutCodeConstraint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77A9992F1FB769A000B7CEC5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		77A999301FB769A000B7CEC5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -63,7 +61,6 @@
 				77A999301FB769A000B7CEC5 /* AppDelegate.m */,
 				77A999471FB76A2600B7CEC5 /* SVMainViewController.h */,
 				77A999481FB76A2600B7CEC5 /* SVMainViewController.m */,
-				779016441FFD91FA008F9B44 /* Storyboard.storyboard */,
 				77A999381FB769A000B7CEC5 /* Assets.xcassets */,
 				77A9993D1FB769A000B7CEC5 /* Info.plist */,
 				77A9993E1FB769A000B7CEC5 /* main.m */,
@@ -131,7 +128,6 @@
 			files = (
 				77A999391FB769A000B7CEC5 /* Assets.xcassets in Resources */,
 				77A999461FB769BE00B7CEC5 /* Default-568h@2x.png in Resources */,
-				779016451FFD91FA008F9B44 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
